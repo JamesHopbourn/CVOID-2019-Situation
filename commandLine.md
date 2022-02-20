@@ -3,6 +3,7 @@
 
 - 数据抓取：Python + requests
 - 数据处理：Pyhton + pymysql
+- 数据存储：GitHub repository
 - 网页技术：Java + tomcat + HTML + CSS
 - 监控页面：Grafana
 - 移动展示：微信小程序（因为不支持个人上线医疗类小程序，可以本地部署配置内网穿透，以测试模式访问演示）
