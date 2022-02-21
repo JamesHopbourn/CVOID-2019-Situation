@@ -14,9 +14,16 @@
 - /api/area
 - /api/news
 
+#### 所需软件
+- pip3 install requests
+- brew install mysql@5.7
+- brew install maven
+- mysql-connector-java-8.0.28
+
 #### 精选教程
 [Java Servlet Tutorial - How to Install Tomcat 8 (on Windows, Mac OS and Ubuntu) and Get Started with Java Servlet Programming](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Tomcat_HowTo.html)  
 [Java Tutorial - An Introduction to Java Database Programming (JDBC) by Examples with MySQL](https://www3.ntu.edu.sg/home/ehchua/programming/java/JDBC_Basic.html)  
+[How to Create database in MySql using JSP code](https://www.studentstutorial.com/java-project/create-database-in-mysql-using-jsp.php)  
 
 #### tomcat 配置路径
 ```
@@ -160,5 +167,151 @@ open 'http://localhost:8080/hello/sayhello'
 
 #### IDEA 添加 tomcat 外部工具
 
-#### requests乱码解决
+#### tomcat 禁止访问项目目录
+
+#### tomcat 引用 resource css
+[html - Attaching a CSS file to a Java Servlet in Tomcat - Stack Overflow](https://stackoverflow.com/questions/23636304/attaching-a-css-file-to-a-java-servlet-in-tomcat)  
+
+#### requests 乱码解决
 [怎么解决python中的request中文乱码 - 编程语言 - 亿速云](https://www.yisu.com/zixun/224414.html)  
+
+#### mysql-connector-java
+[Connect to MySQL using Java JDBC](https://btbaftbp.tistory.com/m/129)  
+
+#### 安装 mysql 5.7
+```
+brew install mysql@5.7
+==> Downloading https://ghcr.io/v2/homebrew/core/mysql/5.7/manifests/5.7.36
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/mysql/5.7/blobs/sha256:db78d3c777c2712cf651550932d8cfbc6a0d75557ffe292272201
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sha256:db78d3c777c2712cf651550932d8cfbc6a0d7555
+######################################################################## 100.0%
+==> Pouring mysql@5.7--5.7.36.arm64_monterey.bottle.tar.gz
+==> /opt/homebrew/Cellar/mysql@5.7/5.7.36/bin/mysqld --initialize-insecure --user=james --basedir=/opt/homebrew/Cellar/mysql@
+==> Caveats
+We've installed your MySQL database without a root password. To secure it run:
+    mysql_secure_installation
+
+MySQL is configured to only allow connections from localhost by default
+
+To connect run:
+    mysql -uroot
+
+mysql@5.7 is keg-only, which means it was not symlinked into /opt/homebrew,
+because this is an alternate version of another formula.
+
+If you need to have mysql@5.7 first in your PATH, run:
+  echo 'export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"' >> ~/.zshrc
+
+For compilers to find mysql@5.7 you may need to set:
+  export LDFLAGS="-L/opt/homebrew/opt/mysql@5.7/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/mysql@5.7/include"
+
+For pkg-config to find mysql@5.7 you may need to set:
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/mysql@5.7/lib/pkgconfig"
+
+
+To restart mysql@5.7 after an upgrade:
+  brew services restart mysql@5.7
+Or, if you don't want/need a background service you can just run:
+  /opt/homebrew/opt/mysql@5.7/bin/mysqld_safe --datadir=/opt/homebrew/var/mysql
+==> Summary
+🍺  /opt/homebrew/Cellar/mysql@5.7/5.7.36: 320 files, 233MB
+==> Running `brew cleanup mysql@5.7`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+```
+
+#### start mysql
+```
+brew services start mysql@5.7
+==> Successfully started `mysql@5.7` (label: homebrew.mxcl.mysql@5.7)
+
+echo 'export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"' >> ~/.zshrc
+
+mysql_secure_installation
+```
+[MySQL安全设置命令mysql_secure_installation - Malcolm的博客 | Malcolm Blog](https://mal-suen.github.io/2018/05/27/MySQL%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE%E5%91%BD%E4%BB%A4mysql_secure_installation/)  
+
+```
+mysql -uroot -p
+Enter password: james123
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 5
+Server version: 5.7.36 Homebrew
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> set password for root@localhost = password('james123');
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> quit
+Bye
+```
+
+```
+mysql> create database RUNOOB;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> use RUNOOB;
+Database changed
+mysql> CREATE TABLE `websites` (
+    ->   `id` int(11) NOT NULL AUTO_INCREMENT,
+    ->   `name` char(20) NOT NULL DEFAULT '' COMMENT '站点名称',
+    ->   `url` varchar(255) NOT NULL DEFAULT '',
+    ->   `alexa` int(11) NOT NULL DEFAULT '0' COMMENT 'Alexa 排名',
+    ->   `country` char(10) NOT NULL DEFAULT '' COMMENT '国家',
+    ->   PRIMARY KEY (`id`)
+    -> ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> INSERT INTO `websites` VALUES ('1', 'Google', 'https://www.google.cm/', '1', 'USA'), ('2', '淘宝', 'https://www.taobao.com/', '13', 'CN'), ('3', '菜鸟教程', 'http://www.runoob.com', '5892', ''), ('4', '微博', 'http://weibo.com/', '20', 'CN'), ('5', 'Facebook', 'https://www.facebook.com/', '3', 'USA');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+```
+[Java MySQL 连接 | 菜鸟教程](https://www.runoob.com/java/java-mysql-connect.html)  
+
+#### Java with JSON
+[Java 中 JSON 的使用 | 菜鸟教程](https://www.runoob.com/w3cnote/java-json-instro.html)  
+
+#### IDEA Maven create project
+Maven是一个Java项目的管理和构建工具：
+
+Maven使用pom.xml定义项目内容，并使用预设的目录结构；
+在Maven中声明一个依赖项可以自动下载并导入classpath；
+Maven使用groupId，artifactId和version唯一定位一个依赖。
+[Maven介绍 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/1252599548343744/1309301146648610)  
+[idea-如何创建Maven项目？_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1eU4y1M7Jn)  
+```
+brew install maven
+==> Downloading https://ghcr.io/v2/homebrew/core/maven/manifests/3.8.4
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/maven/blobs/sha256:6e032d44f0fef2a59373945e95b7f7522e4dc95069498b54fe9075d06
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sha256:6e032d44f0fef2a59373945e95b7f7522e4dc950
+######################################################################## 100.0%
+==> Pouring maven--3.8.4.arm64_monterey.bottle.tar.gz
+🍺  /opt/homebrew/Cellar/maven/3.8.4: 79 files, 10MB 
+mvn -version
+Apache Maven 3.8.4 (9b656c72d54e5bacbed989b64718c159fe39b537)
+Maven home: /opt/homebrew/Cellar/maven/3.8.4/libexec
+Java version: 17.0.1, vendor: Homebrew, runtime: /opt/homebrew/Cellar/openjdk/17.0.1_1/libexec/openjdk.jdk/Contents/Home
+Default locale: zh_CN_#Hans, platform encoding: UTF-8
+OS name: "mac os x", version: "12.0.1", arch: "aarch64", family: "mac"
+```
+
+#### config pom.xml
+```
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.79</version>
+        </dependency>
+    </dependencies>
+```
