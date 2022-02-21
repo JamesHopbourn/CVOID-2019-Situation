@@ -298,18 +298,22 @@ Maven使用groupId，artifactId和version唯一定位一个依赖。
 ```
 brew install maven
 ==> Downloading https://ghcr.io/v2/homebrew/core/maven/manifests/3.8.4
-######################################################################## 100.0%
-==> Downloading https://ghcr.io/v2/homebrew/core/maven/blobs/sha256:6e032d44f0fef2a59373945e95b7f7522e4dc95069498b54fe9075d06
-==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sha256:6e032d44f0fef2a59373945e95b7f7522e4dc950
-######################################################################## 100.0%
+Already downloaded: /Users/james/Library/Caches/Homebrew/downloads/fe67ca34776825d1087e90c28238e7e881c893cd76e2df927f186d8ac34aff40--maven-3.8.4.bottle_manifest.json
+==> Downloading https://ghcr.io/v2/homebrew/core/maven/blobs/sha256:6e032d44f0fe
+Already downloaded: /Users/james/Library/Caches/Homebrew/downloads/a689558139488d079e7befe44f2f7f1560edfee6d2fd882908a7fa8be3f0452e--maven--3.8.4.arm64_monterey.bottle.tar.gz
+==> Installing maven
 ==> Pouring maven--3.8.4.arm64_monterey.bottle.tar.gz
-🍺  /opt/homebrew/Cellar/maven/3.8.4: 79 files, 10MB 
-mvn -version
+🍺  /opt/homebrew/Cellar/maven/3.8.4: 79 files, 10MB
+==> Running `brew cleanup maven`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+
+mvn --version
 Apache Maven 3.8.4 (9b656c72d54e5bacbed989b64718c159fe39b537)
 Maven home: /opt/homebrew/Cellar/maven/3.8.4/libexec
 Java version: 17.0.1, vendor: Homebrew, runtime: /opt/homebrew/Cellar/openjdk/17.0.1_1/libexec/openjdk.jdk/Contents/Home
 Default locale: zh_CN_#Hans, platform encoding: UTF-8
-OS name: "mac os x", version: "12.0.1", arch: "aarch64", family: "mac"
+OS name: "mac os x", version: "12.0.1", arch: "aarch64", family: "mac" 
 ```
 
 #### config pom.xml
@@ -325,3 +329,6 @@ OS name: "mac os x", version: "12.0.1", arch: "aarch64", family: "mac"
 
 #### FastAPI HTML
 [How to Set Up a HTML App with FastAPI, Jinja, Forms & Templates](https://eugeneyan.com/writing/how-to-set-up-html-app-with-fastapi-jinja-forms-templates/)  
+
+### git
+[如何参与Tianchi(天池)项目以及如何贡献代码 - QTCN开发网 - Powered by phpwind](http://www.qtcn.org/bbs/simple/?t53628.html)  
