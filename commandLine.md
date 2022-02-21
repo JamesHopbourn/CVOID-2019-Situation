@@ -1,6 +1,5 @@
 #### 项目设计
 系统为用户提供一个COVID-19疫情数据和分析结果的平台，系统采用python语言作为数据抓取以及数据处理工具、采用Java作为Web服务端开发技术，采用微信小程序作为客户端展示技术。
-
 - 数据抓取：Python + requests
 - 数据处理：Pyhton + pymysql
 - 数据存储：GitHub repository
@@ -13,17 +12,26 @@
 - /api/provinceName
 - /api/area
 - /api/news
+- /api/date
 
 #### 所需软件
-- pip3 install requests
+- pip3 install -U pymysql
+- pip3 install -U requests
+- pip3 install -U uvicorn
+- pip3 install -U fastapi
+- pip3 install -U mysql-connector-python
 - brew install mysql@5.7
 - brew install maven
+- brew install poetry
 - mysql-connector-java-8.0.28
 
 #### 精选教程
 [Java Servlet Tutorial - How to Install Tomcat 8 (on Windows, Mac OS and Ubuntu) and Get Started with Java Servlet Programming](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Tomcat_HowTo.html)  
 [Java Tutorial - An Introduction to Java Database Programming (JDBC) by Examples with MySQL](https://www3.ntu.edu.sg/home/ehchua/programming/java/JDBC_Basic.html)  
 [How to Create database in MySql using JSP code](https://www.studentstutorial.com/java-project/create-database-in-mysql-using-jsp.php)  
+
+#### 参考项目
+[eugeneyan/fastapi-html: Sample repository demonstrating how to use FastAPI to serve HTML web apps.](https://github.com/eugeneyan/fastapi-html)  
 
 #### tomcat 配置路径
 ```
@@ -315,3 +323,6 @@ OS name: "mac os x", version: "12.0.1", arch: "aarch64", family: "mac"
         </dependency>
     </dependencies>
 ```
+
+#### FastAPI HTML
+[How to Set Up a HTML App with FastAPI, Jinja, Forms & Templates](https://eugeneyan.com/writing/how-to-set-up-html-app-with-fastapi-jinja-forms-templates/)  
