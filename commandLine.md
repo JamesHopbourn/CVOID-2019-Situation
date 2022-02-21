@@ -288,14 +288,13 @@ Records: 5  Duplicates: 0  Warnings: 0
 #### Java with JSON
 [Java 中 JSON 的使用 | 菜鸟教程](https://www.runoob.com/w3cnote/java-json-instro.html)  
 
-#### IDEA Maven create project
-Maven是一个Java项目的管理和构建工具：
-
-Maven使用pom.xml定义项目内容，并使用预设的目录结构；
-在Maven中声明一个依赖项可以自动下载并导入classpath；
-Maven使用groupId，artifactId和version唯一定位一个依赖。
+#### IDEA Maven create project  
+Maven是一个Java项目的管理和构建工具  
+Maven使用pom.xml定义项目内容，并使用预设的目录结构；  
+在Maven中声明一个依赖项可以自动下载并导入classpath；  
+Maven使用groupId，artifactId和version唯一定位一个依赖。  
 [Maven介绍 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/1252599548343744/1309301146648610)  
-[idea-如何创建Maven项目？_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1eU4y1M7Jn)  
+[idea-如何创建Maven项目？哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1eU4y1M7Jn)  
 ```
 brew install maven
 ==> Downloading https://ghcr.io/v2/homebrew/core/maven/manifests/3.8.4
