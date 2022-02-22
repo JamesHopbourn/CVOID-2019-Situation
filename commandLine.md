@@ -20,6 +20,7 @@
 - pip3 install -U uvicorn
 - pip3 install -U fastapi
 - pip3 install -U mysql-connector-python
+- pip3 install -U pipreqs
 - brew install mysql@5.7
 - brew install maven
 - brew install poetry
@@ -330,5 +331,31 @@ OS name: "mac os x", version: "12.0.1", arch: "aarch64", family: "mac"
 #### FastAPI HTML
 [How to Set Up a HTML App with FastAPI, Jinja, Forms & Templates](https://eugeneyan.com/writing/how-to-set-up-html-app-with-fastapi-jinja-forms-templates/)  
 
+#### pipreqs requirements
+```
+pip3 install -U pipreqs
+Collecting pipreqs
+  Downloading pipreqs-0.4.11-py2.py3-none-any.whl (32 kB)
+Collecting docopt
+  Downloading docopt-0.6.2.tar.gz (25 kB)
+  Preparing metadata (setup.py) ... done
+Collecting yarg
+  Downloading yarg-0.1.9-py2.py3-none-any.whl (19 kB)
+Requirement already satisfied: requests in /opt/homebrew/lib/python3.9/site-packages (from yarg->pipreqs) (2.26.0)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /opt/homebrew/lib/python3.9/site-packages (from requests->yarg->pipreqs) (1.26.7)
+Requirement already satisfied: charset-normalizer~=2.0.0 in /opt/homebrew/lib/python3.9/site-packages (from requests->yarg->pipreqs) (2.0.9)
+Requirement already satisfied: idna<4,>=2.5 in /opt/homebrew/lib/python3.9/site-packages (from requests->yarg->pipreqs) (3.3)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/homebrew/lib/python3.9/site-packages (from requests->yarg->pipreqs) (2021.10.8)
+Building wheels for collected packages: docopt
+  Building wheel for docopt (setup.py) ... done
+  Created wheel for docopt: filename=docopt-0.6.2-py2.py3-none-any.whl size=13724 sha256=1d4695387d7819e54edd943b5bd51e46bcf77ca1463fdfe2e6683e4d7443730f
+  Stored in directory: /Users/james/Library/Caches/pip/wheels/70/4a/46/1309fc853b8d395e60bafaf1b6df7845bdd82c95fd59dd8d2b
+Successfully built docopt
+Installing collected packages: yarg, docopt, pipreqs
+Successfully installed docopt-0.6.2 pipreqs-0.4.11 yarg-0.1.9
+
+pipreqs ./
+INFO: Successfully saved requirements file in ./requirements.txt
+```
 ### git
 [如何参与Tianchi(天池)项目以及如何贡献代码 - QTCN开发网 - Powered by phpwind](http://www.qtcn.org/bbs/simple/?t53628.html)  
