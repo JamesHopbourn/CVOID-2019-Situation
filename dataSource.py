@@ -7,11 +7,11 @@ from datetime import date
 disable_warnings()
 
 db = pymysql.connect(
-	host='localhost',
-	user='root', 
-	password = "james123",
-	db='CVOID2019',
-	)
+	host = 'localhost',
+	user = 'root', 
+	password = 'james123',
+	db = 'CVOID2019'
+)
 
 # mysql 初始化
 cursor = db.cursor()
@@ -27,7 +27,7 @@ resp = requests.get('https://ncov.dxy.cn/ncovh5/view/pneumonia', verify=False)
 data = re.findall(r'(?<=window.getAreaStat =).*?(?=}catch)', str(resp.content,'utf-8') )
 data = json.loads(data[0])
 for i in range(len(data)):
-	cursor.execute("INSERT INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES (%s, %s, %s, %s, %s, %s)", 
+	cursor.execute('INSERT INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES (%s, %s, %s, %s, %s, %s)', 
 		(date.today(), data[i]['provinceName'], data[i]['currentConfirmedCount'], data[i]['confirmedCount'], data[i]['deadCount'], data[i]['curedCount'],))
 db.commit()
 db.close()
