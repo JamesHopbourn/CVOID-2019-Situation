@@ -6,9 +6,13 @@ from urllib3 import *
 from datetime import date
 disable_warnings()
 
+resp = requests.get('https://ncov.dxy.cn/ncovh5/view/pneumonia', verify=False)
+data = re.findall(r'(?<=window.getAreaStat =).*?(?=}catch)', str(resp.content,'utf-8'))
+data = json.loads(data[0])
+
 db = pymysql.connect(
 	host = 'localhost',
-	user = 'root', 
+	user = 'root',
 	password = 'james123',
 	db = 'CVOID2019'
 )
@@ -23,9 +27,6 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS detailCount (
 	deadCount int(10) NOT NULL,
 	curedCount int(10) NOT NULL)""")
 
-resp = requests.get('https://ncov.dxy.cn/ncovh5/view/pneumonia', verify=False)
-data = re.findall(r'(?<=window.getAreaStat =).*?(?=}catch)', str(resp.content,'utf-8') )
-data = json.loads(data[0])
 for i in range(len(data)):
 	cursor.execute('INSERT INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES (%s, %s, %s, %s, %s, %s)', 
 		(date.today(), data[i]['provinceName'], data[i]['currentConfirmedCount'], data[i]['confirmedCount'], data[i]['deadCount'], data[i]['curedCount'],))
