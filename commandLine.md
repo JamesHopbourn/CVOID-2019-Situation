@@ -357,5 +357,9 @@ Successfully installed docopt-0.6.2 pipreqs-0.4.11 yarg-0.1.9
 pipreqs ./
 INFO: Successfully saved requirements file in ./requirements.txt
 ```
+
+#### config file
+[configparser --- 配置文件解析器 — Python 3.7.12 文档](https://docs.python.org/zh-cn/3.7/library/configparser.html)
+
 ### git
 [如何参与Tianchi(天池)项目以及如何贡献代码 - QTCN开发网 - Powered by phpwind](http://www.qtcn.org/bbs/simple/?t53628.html)  
