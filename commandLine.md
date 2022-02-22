@@ -24,6 +24,9 @@ server conf path
 
 account conf path
 /opt/homebrew/etc/tomcat/tomcat-users.xml
+
+temp directory
+/opt/homebrew/Cellar/tomcat/10.0.14/libexec/work/Catalina/localhost
 ```
 
 #### tomcat 相关信息
