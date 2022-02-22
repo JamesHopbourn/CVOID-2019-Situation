@@ -4,17 +4,21 @@ import pymysql
 import requests
 from urllib3 import *
 from datetime import date
+from configparser import ConfigParser
 disable_warnings()
 
 resp = requests.get('https://ncov.dxy.cn/ncovh5/view/pneumonia', verify=False)
 data = re.findall(r'(?<=window.getAreaStat =).*?(?=}catch)', str(resp.content,'utf-8'))
 data = json.loads(data[0])
 
+config = ConfigParser()
+config.read('database.conf')
+config = config['database']
 db = pymysql.connect(
-	host = 'localhost',
-	user = 'root',
-	password = 'james123',
-	db = 'CVOID2019'
+	host = config['host'],
+	user = config['user'],
+	password = config['password'],
+	database = config['database']
 )
 
 # mysql 初始化
