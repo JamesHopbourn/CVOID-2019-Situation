@@ -29,3 +29,5 @@
 - brew install maven
 - brew install poetry
 - mysql-connector-java-8.0.28
+
+- [Download IntelliJ IDEA: The Capable & Ergonomic Java IDE by JetBrains](https://www.jetbrains.com/idea/download/#section=mac)
