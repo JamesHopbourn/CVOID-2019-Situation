@@ -60,6 +60,9 @@ server conf path
 account conf path
 /opt/homebrew/etc/tomcat/tomcat-users.xml
 
+IDEA libexec
+/opt/homebrew/Cellar/tomcat/10.0.14/libexec
+
 class temp directory
 /opt/homebrew/Cellar/tomcat/10.0.14/libexec/work/Catalina/localhost
 ```
@@ -385,6 +388,11 @@ INFO: Successfully saved requirements file in ./requirements.txt
 
 #### config file
 [configparser --- 配置文件解析器 — Python 3.7.12 文档](https://docs.python.org/zh-cn/3.7/library/configparser.html)
+
+#### IDEA 配置 tomcat
+[通过Homebrew安装tomcat并配置到IntelliJ IDEA - 知乎](https://zhuanlan.zhihu.com/p/103522795)  
+[mac初见tomcat（上）——使用homebrew安装及IDEA环境部署 - 简书](https://www.jianshu.com/p/2f8eec345749)  
+[mac初见tomcat（下）——IDEA创建JavaWeb项目 - 简书](https://www.jianshu.com/p/6c4a84a06b80)  
 
 ### git
 [如何参与Tianchi(天池)项目以及如何贡献代码](http://www.qtcn.org/bbs/simple/?t53628.html)  
