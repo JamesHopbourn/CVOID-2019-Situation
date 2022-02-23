@@ -44,7 +44,7 @@ Stopping `tomcat`... (might take a while)
 #### tomcat 配置路径
 ```
 root path
-/opt/homebrew/吃的Cellar/tomcat/10.0.14/libexec/webapps/ROOT
+/opt/homebrew/Cellar/tomcat/10.0.14/libexec/webapps/ROOT
 
 conf path
 /opt/homebrew/etc/tomcat
@@ -62,6 +62,21 @@ account conf path
 
 class temp directory
 /opt/homebrew/Cellar/tomcat/10.0.14/libexec/work/Catalina/localhost
+```
+
+#### tomcat 配置用户
+```
+vim /opt/homebrew/etc/tomcat/tomcat-users.xml
+```
+```
+<user username="admin" password="admin" roles="manager-gui"/>
+<user username="robot" password="james" roles="manager-script"/>
+```
+```
+brew services restart tomcat
+Stopping `tomcat`... (might take a while)
+==> Successfully stopped `tomcat` (label: homebrew.mxcl.tomcat)
+==> Successfully started `tomcat` (label: homebrew.mxcl.tomcat)
 ```
 
 #### tomcat 相关信息
@@ -192,7 +207,7 @@ open 'http://localhost:8080/hello/sayhello'
 [html - Attaching a CSS file to a Java Servlet in Tomcat - Stack Overflow](https://stackoverflow.com/questions/23636304/attaching-a-css-file-to-a-java-servlet-in-tomcat)  
 
 #### requests 乱码解决
-[怎么解决python中的request中文乱码 - 编程语言 - 亿速云](https://www.yisu.com/zixun/224414.html)  
+[怎么解决python中的request中文乱码](https://www.yisu.com/zixun/224414.html)  
 
 #### mysql-connector-java
 [Connect to MySQL using Java JDBC](https://btbaftbp.tistory.com/m/129)  
@@ -250,7 +265,7 @@ echo 'export PATH="/opt/homebrew/opt/mysql@5.7/bin:$PATH"' >> ~/.zshrc
 
 mysql_secure_installation
 ```
-[MySQL安全设置命令mysql_secure_installation - Malcolm的博客 | Malcolm Blog](https://mal-suen.github.io/2018/05/27/MySQL%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE%E5%91%BD%E4%BB%A4mysql_secure_installation/)  
+[MySQL安全设置命令mysql_secure_installation](https://mal-suen.github.io/2018/05/27/MySQL%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE%E5%91%BD%E4%BB%A4mysql_secure_installation/)  
 
 ```
 mysql -uroot -p
@@ -305,7 +320,7 @@ Maven使用pom.xml定义项目内容，并使用预设的目录结构；
 在Maven中声明一个依赖项可以自动下载并导入classpath；  
 Maven使用groupId，artifactId和version唯一定位一个依赖。  
 [Maven介绍 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/1252599548343744/1309301146648610)  
-[idea-如何创建Maven项目？哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1eU4y1M7Jn)  
+[idea-如何创建Maven项目？](https://www.bilibili.com/video/BV1eU4y1M7Jn)  
 ```
 brew install maven
 ==> Downloading https://ghcr.io/v2/homebrew/core/maven/manifests/3.8.4
@@ -372,4 +387,4 @@ INFO: Successfully saved requirements file in ./requirements.txt
 [configparser --- 配置文件解析器 — Python 3.7.12 文档](https://docs.python.org/zh-cn/3.7/library/configparser.html)
 
 ### git
-[如何参与Tianchi(天池)项目以及如何贡献代码 - QTCN开发网 - Powered by phpwind](http://www.qtcn.org/bbs/simple/?t53628.html)  
+[如何参与Tianchi(天池)项目以及如何贡献代码](http://www.qtcn.org/bbs/simple/?t53628.html)  
