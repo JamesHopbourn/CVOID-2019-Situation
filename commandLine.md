@@ -11,6 +11,28 @@
 ln -s /Users/james/Code/CVOID-2019-Situation/hello/ /opt/homebrew/Cellar/tomcat/10.0.14/libexec/webapps/
 ```
 
+#### tomcat 虚拟目录
+```
+vim /opt/homebrew/etc/tomcat/server.xml
+```
+```
+      <Host name="localhost"  appBase="webapps" unpackWARs="true" autoDeploy="true">
+        <!-- insert code here -->
+      </Host>
+```
+```
+<Context path="虚拟目录" docBase="绝对路径" reloadable="true"/>
+
+<Context path="/world" docBase="/Users/james/Code/CVOID-2019-Situation/hello" reloadable="true"/>
+
+```
+```
+brew services restart tomcat
+Stopping `tomcat`... (might take a while)
+==> Successfully stopped `tomcat` (label: homebrew.mxcl.tomcat)
+==> Successfully started `tomcat` (label: homebrew.mxcl.tomcat)
+```
+
 #### tomcat 配置路径
 ```
 root path
@@ -21,6 +43,8 @@ conf path
 
 web conf path
 /opt/homebrew/etc/tomcat/web.xml
+
+server.xml path
 
 server conf path
 /opt/homebrew/etc/tomcat/server.xml
