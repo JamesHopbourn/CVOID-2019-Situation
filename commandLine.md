@@ -28,7 +28,6 @@ vim /opt/homebrew/etc/tomcat/server.xml
 <Context path="虚拟目录" docBase="绝对路径" reloadable="true"/>
 
 <Context path="/world" docBase="/Users/james/Code/CVOID-2019-Situation/hello" reloadable="true"/>
-
 ```
 ```
 <Host name="localhost"  appBase="webapps" unpackWARs="true" autoDeploy="true">
