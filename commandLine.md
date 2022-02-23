@@ -16,15 +16,24 @@ ln -s /Users/james/Code/CVOID-2019-Situation/hello/ /opt/homebrew/Cellar/tomcat/
 vim /opt/homebrew/etc/tomcat/server.xml
 ```
 ```
-      <Host name="localhost"  appBase="webapps" unpackWARs="true" autoDeploy="true">
-        <!-- insert code here -->
-      </Host>
+......
+
+<Host name="localhost"  appBase="webapps" unpackWARs="true" autoDeploy="true">
+  <!-- insert code here -->
+</Host>
+
+......
 ```
 ```
 <Context path="虚拟目录" docBase="绝对路径" reloadable="true"/>
 
 <Context path="/world" docBase="/Users/james/Code/CVOID-2019-Situation/hello" reloadable="true"/>
 
+```
+```
+<Host name="localhost"  appBase="webapps" unpackWARs="true" autoDeploy="true">
+  <Context path="/world" docBase="/Users/james/Code/CVOID-2019-Situation/hello" reloadable="true"/>
+</Host>
 ```
 ```
 brew services restart tomcat
@@ -44,8 +53,6 @@ conf path
 web conf path
 /opt/homebrew/etc/tomcat/web.xml
 
-server.xml path
-
 server conf path
 /opt/homebrew/etc/tomcat/server.xml
     <param-name>listings</param-name>
@@ -54,7 +61,7 @@ server conf path
 account conf path
 /opt/homebrew/etc/tomcat/tomcat-users.xml
 
-temp directory
+class temp directory
 /opt/homebrew/Cellar/tomcat/10.0.14/libexec/work/Catalina/localhost
 ```
 
