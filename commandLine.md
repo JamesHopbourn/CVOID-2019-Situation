@@ -6,6 +6,11 @@
 #### 参考项目
 [eugeneyan/fastapi-html: Sample repository demonstrating how to use FastAPI to serve HTML web apps.](https://github.com/eugeneyan/fastapi-html)  
 
+#### tomcat 项目链接
+```
+ln -s /Users/james/Code/CVOID-2019-Situation/hello/ /opt/homebrew/Cellar/tomcat/10.0.14/libexec/webapps/
+```
+
 #### tomcat 配置路径
 ```
 root path
