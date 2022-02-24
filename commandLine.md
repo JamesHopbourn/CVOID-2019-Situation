@@ -67,13 +67,23 @@ class temp directory
 /opt/homebrew/Cellar/tomcat/10.0.14/libexec/work/Catalina/localhost
 ```
 
+#### tomcat 外部IP访问
+```
+vim /opt/homebrew/Cellar/tomcat/10.0.14/libexec/webapps/manager/WEB-INF/web.xml
+```
+```
+# 注释或者删除如下配置
+  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+```
+
 #### tomcat 配置用户
 ```
 vim /opt/homebrew/etc/tomcat/tomcat-users.xml
 ```
 ```
 <user username="admin" password="admin" roles="manager-gui"/>
-<user username="robot" password="james" roles="manager-script"/>
+<user username="robot" password="robot" roles="manager-script"/>
 ```
 ```
 brew services restart tomcat
