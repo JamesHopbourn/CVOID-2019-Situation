@@ -391,6 +391,7 @@ INFO: Successfully saved requirements file in ./requirements.txt
 
 #### IDEA 配置 tomcat
 [通过Homebrew安装tomcat并配置到IntelliJ IDEA - 知乎](https://zhuanlan.zhihu.com/p/103522795)  
+[idea配置Tomcat服务器](https://www.bilibili.com/video/BV1Bh411z7fk/?spm_id_from=autoNext)
 [mac初见tomcat（上）——使用homebrew安装及IDEA环境部署 - 简书](https://www.jianshu.com/p/2f8eec345749)  
 [mac初见tomcat（下）——IDEA创建JavaWeb项目 - 简书](https://www.jianshu.com/p/6c4a84a06b80)  
 
