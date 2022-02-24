@@ -33,18 +33,22 @@ cursor.execute(
 	curedCount int(10) NOT NULL)"""
 )
 
-for i in range(len(data)):
-    cursor.execute(
-        "INSERT INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES (%s, %s, %s, %s, %s, %s)",
-        (
-            date.today(),
-            data[i]["provinceName"],
-            data[i]["currentConfirmedCount"],
-            data[i]["confirmedCount"],
-            data[i]["deadCount"],
-            data[i]["curedCount"],
-        ),
-    )
-db.commit()
-db.close()
-
+try:
+    for i in range(len(data)):
+        cursor.execute(
+            "INSERT INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES (%s, %s, %s, %s, %s, %s)",
+            (
+                date.today(),
+                data[i]["provinceName"],
+                data[i]["currentConfirmedCount"],
+                data[i]["confirmedCount"],
+                data[i]["deadCount"],
+                data[i]["curedCount"],
+            ),
+        )
+    db.commit()
+    db.close()
+    print(len(data),'条数据已录入')
+except:
+    db.rollback()
+    print('数据录入失败')
