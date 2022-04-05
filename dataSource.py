@@ -1,3 +1,4 @@
+import os
 import re
 import json
 import pymysql
@@ -13,7 +14,8 @@ data = re.findall(r"(?<=window.getAreaStat =).*?(?=}catch)", str(resp.content, "
 data = json.loads(data[0])
 
 config = ConfigParser()
-config.read("database.conf")
+configPath = os.path.join(os.path.dirname(__file__), "database.conf")
+config.read(configPath)
 config = config["database"]
 db = pymysql.connect(
     host=config["host"],
