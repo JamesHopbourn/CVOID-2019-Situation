@@ -1,5 +1,3 @@
-
-
 INSERT INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
 ('2022-05-01', '香港', 261858, 330670, 9308, 59504),
 ('2022-05-01', '台湾', 101276, 115883, 865, 13742),
