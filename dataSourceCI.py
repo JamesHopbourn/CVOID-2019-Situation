@@ -11,8 +11,8 @@ today = str(date.today())
 plus_token = os.environ['plus_token']
 github_token = os.environ['repo_token']
 
-name = "James Hopbourn"
-email = "jameshopbourn@gmail.com"
+name = 'James Hopbourn'
+email = 'jameshopbourn@gmail.com'
 dataSQLpath = f'https://api.github.com/repos/JamesHopbourn/CVOID-2019-Situation/contents/data.sql'
 todaySQLpath = f'https://api.github.com/repos/JamesHopbourn/CVOID-2019-Situation/contents/SQLdata/{today}.sql'
 
@@ -29,7 +29,7 @@ for i in range(len(data)):
 
 # 报错推送
 def statusCheck(funcName, statusCode):
-    if (funcName == "创建文件" and statusCode == 422):
+    if (funcName == '创建文件' and statusCode == 422):
         return
     if (statusCode < 200 or statusCode >= 300):
         content = f'{{"token": "{plus_token}", "title":"出错啦~", "content" : "{funcName}:{statusCode}", "template": "json"}}'
@@ -44,12 +44,12 @@ get = requests.get(
     url=dataSQLpath,
     headers={"Authorization": f"token {github_token}"}, verify=False
 )
-statusCheck("获取文件", get.status_code)
+statusCheck('获取文件', get.status_code)
 prev_sha = json.loads(get.text)['sha']
 prev_data = json.loads(get.text)['content']
 prev_data = base64.b64decode(prev_data).decode('utf-8')
 comb_text = f'{prev_data}\n\n{execute[:-2]};'
-comb_data = base64.b64encode(comb_text.encode("utf-8")).decode('utf-8')
+comb_data = base64.b64encode(comb_text.encode('utf-8')).decode('utf-8')
 
 # 更新 dataSQL.sql
 if (today not in prev_data):
@@ -59,14 +59,14 @@ if (today not in prev_data):
         data=f'{{"message": "Data update", "content":"{comb_data}", "sha" : "{prev_sha}",\
         "committer":{{"name":"{name}","email":"{email}"}}}}', verify=False
     )
-    statusCheck("更新文件", update.status_code)
+    statusCheck('更新文件', update.status_code)
 
 # 创建当日SQL文件
-today_data = base64.b64encode(f"{execute[:-2]};".encode("utf-8")).decode('utf-8')
+today_data = base64.b64encode(f"{execute[:-2]};".encode('utf-8')).decode('utf-8')
 upload = requests.put(
     url=todaySQLpath,
     headers={"Authorization": f"token {github_token}"},
     data=f'{{"message": "Data upload", "content":"{today_data}", \
     "committer":{{"name":"{name}","email":"{email}"}}}}', verify=False
 )
-statusCheck("创建文件", upload.status_code)
+statusCheck('创建文件', upload.status_code)
