@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS `detailCount` (
   PRIMARY KEY (`date`,`provinceName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-USE CVOID2019
+USE CVOID2019;
 
 INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
 ('2022-05-01', '香港', 261858, 330670, 9308, 59504),
