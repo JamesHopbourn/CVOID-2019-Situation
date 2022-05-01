@@ -7,19 +7,22 @@ from urllib3 import *
 from datetime import date
 
 disable_warnings()
+
+# 常量定义
+name = 'James Hopbourn'
+email = 'jameshopbourn@gmail.com'
 today = str(date.today())
 plus_token = os.environ['plus_token']
 github_token = os.environ['repo_token']
-
-name = 'James Hopbourn'
-email = 'jameshopbourn@gmail.com'
 dataSQLpath = f'https://api.github.com/repos/JamesHopbourn/CVOID-2019-Situation/contents/data.sql'
 todaySQLpath = f'https://api.github.com/repos/JamesHopbourn/CVOID-2019-Situation/contents/SQLdata/{today}.sql'
 
+# 丁香医生疫情数据爬虫
 resp = requests.get("https://ncov.dxy.cn/ncovh5/view/pneumonia", verify=False)
 data = re.findall(r"(?<=window.getAreaStat =).*?(?=}catch)", str(resp.content, "utf-8"))
 data = json.loads(data[0])
 
+# 构建 SQL 语句
 execute = "INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES\n"
 for i in range(len(data)):
     execute += str((today, data[i]["provinceName"], data[i]["currentConfirmedCount"], data[i]["confirmedCount"],
@@ -33,13 +36,9 @@ def statusCheck(funcName, statusCode):
         return
     if (statusCode < 200 or statusCode >= 300):
         content = f'{{"token": "{plus_token}", "title":"出错啦~", "content" : "{funcName}:{statusCode}", "template": "json"}}'
-        update = requests.put(
-            url='https://www.pushplus.plus/send',
-            data=content.encode('utf-8'), verify=False
-        )
+        update = requests.put(url='https://www.pushplus.plus/send',data=content.encode('utf-8'), verify=False)
 
-
-# 获取 prev today.sql
+# 获取 prev dataSQL.sql
 get = requests.get(
     url=dataSQLpath,
     headers={"Authorization": f"token {github_token}"}, verify=False
