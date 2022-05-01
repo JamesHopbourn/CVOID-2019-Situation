@@ -1,4 +1,13 @@
+CREATE DATABASE IF NOT EXISTS CVOID2019;
 
+CREATE TABLE IF NOT EXISTS `detailCount` (
+  `date` date NOT NULL,
+  `provinceName` varchar(20) NOT NULL,
+  `currentConfirmedCount` int(10) NOT NULL,
+  `confirmedCount` int(10) NOT NULL,
+  `deadCount` int(10) NOT NULL,
+  `curedCount` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
 ('2022-05-01', '香港', 261858, 330670, 9308, 59504),
