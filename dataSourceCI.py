@@ -30,7 +30,7 @@ for i in range(len(data)):
     execute += ',\n'
 
 
-# 报错推送
+# 报错推送到微信
 def statusCheck(funcName, statusCode):
     if (funcName == '创建文件' and statusCode == 422):
         return
@@ -60,7 +60,7 @@ if (today not in prev_data):
     )
     statusCheck('更新文件', update.status_code)
 
-# 创建当日SQL文件
+# 创建今日数据文件
 today_data = base64.b64encode(f"{execute[:-2]};".encode('utf-8')).decode('utf-8')
 upload = requests.put(
     url=todaySQLpath,
