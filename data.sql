@@ -6,10 +6,11 @@ CREATE TABLE IF NOT EXISTS `detailCount` (
   `currentConfirmedCount` int(10) NOT NULL,
   `confirmedCount` int(10) NOT NULL,
   `deadCount` int(10) NOT NULL,
-  `curedCount` int(10) NOT NULL
+  `curedCount` int(10) NOT NULL,
+  PRIMARY KEY (`date`,`provinceName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO CVOID2019.detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
 ('2022-05-01', '香港', 261858, 330670, 9308, 59504),
 ('2022-05-01', '台湾', 101276, 115883, 865, 13742),
 ('2022-05-01', '上海市', 22570, 57552, 391, 34591),

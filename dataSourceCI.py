@@ -20,7 +20,7 @@ resp = requests.get("https://ncov.dxy.cn/ncovh5/view/pneumonia", verify=False)
 data = re.findall(r"(?<=window.getAreaStat =).*?(?=}catch)", str(resp.content, "utf-8"))
 data = json.loads(data[0])
 
-execute = "INSERT INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES\n"
+execute = "INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES\n"
 for i in range(len(data)):
     execute += str((today, data[i]["provinceName"], data[i]["currentConfirmedCount"], data[i]["confirmedCount"],
                     data[i]["deadCount"], data[i]["curedCount"]))
