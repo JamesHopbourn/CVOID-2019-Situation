@@ -13,8 +13,8 @@ github_token = os.environ['repo_token']
 
 name = "James Hopbourn"
 email = "jameshopbourn@gmail.com"
-dataSQLpath = f'https://api.github.com/repos/shortcutstemp/test/contents/data.sql'
-todaySQLpath = f'https://api.github.com/repos/shortcutstemp/test/contents/SQLInsert/{today}.sql'
+dataSQLpath = f'https://api.github.com/repos/JamesHopbourn/CVOID-2019-Situation/contents/data.sql'
+todaySQLpath = f'https://api.github.com/repos/JamesHopbourn/CVOID-2019-Situation/contents/SQLInsert/{today}.sql'
 
 resp = requests.get("https://ncov.dxy.cn/ncovh5/view/pneumonia", verify=False)
 data = re.findall(r"(?<=window.getAreaStat =).*?(?=}catch)", str(resp.content, "utf-8"))
