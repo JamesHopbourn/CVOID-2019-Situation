@@ -1,7 +1,7 @@
 name: CVOID19 data update
 on:
   schedule:
-    - cron: '* 22 * * *'
+    - cron: '* 15 * * *'
   push:
 
 jobs:
