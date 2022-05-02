@@ -47,7 +47,7 @@ statusCheck('获取文件', get.status_code)
 prev_sha = json.loads(get.text)['sha']
 prev_data = json.loads(get.text)['content']
 prev_data = base64.b64decode(prev_data).decode('utf-8')
-comb_text = f'{prev_data}\n\n{execute[:-2]};'
+comb_text = f'{prev_data[:-18]}\n\n{execute[:-2]};\n\nCALL totalSum();'
 comb_data = base64.b64encode(comb_text.encode('utf-8')).decode('utf-8')
 
 # 更新 dataSQL.sql
