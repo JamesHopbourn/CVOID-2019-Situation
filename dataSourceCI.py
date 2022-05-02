@@ -51,13 +51,14 @@ comb_text = f'{prev_data}\n\n{execute[:-2]};'
 comb_data = base64.b64encode(comb_text.encode('utf-8')).decode('utf-8')
 
 # 更新 dataSQL.sql
-update = requests.put(
-    url=dataSQLpath,
-    headers={"Authorization": f"token {github_token}"},
-    data=f'{{"message": "Data update", "content":"{comb_data}", "sha" : "{prev_sha}",\
-    "committer":{{"name":"{name}","email":"{email}"}}}}', verify=False
-)
-statusCheck('更新文件', update.status_code)
+if(today not int prev_data):
+    update = requests.put(
+        url=dataSQLpath,
+        headers={"Authorization": f"token {github_token}"},
+        data=f'{{"message": "Data update", "content":"{comb_data}", "sha" : "{prev_sha}",\
+        "committer":{{"name":"{name}","email":"{email}"}}}}', verify=False
+    )
+    statusCheck('更新文件', update.status_code)
 
 # 创建今日数据文件
 today_data = base64.b64encode(f"{execute[:-2]};".encode('utf-8')).decode('utf-8')
