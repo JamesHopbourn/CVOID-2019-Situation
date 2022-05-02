@@ -18,17 +18,73 @@ DELIMITER @@
 
 CREATE PROCEDURE totalSum()
 BEGIN
-  INSERT IGNORE INTO detailCount (`date`, `provinceName`, `currentConfirmedCount`, `confirmedCount`, `deadCount`, `curedCount`) VALUES ('1970-01-01', '全国', '', '', '', '');
+  INSERT IGNORE INTO detailCount (`date`, `provinceName`, `currentConfirmedCount`, `confirmedCount`, `deadCount`, `curedCount`) 
+  VALUES 
+    ('1970-01-01', '全国', '', '', '', '');
 
   SET @totalDeadCount=(SELECT SUM(`deadCount`) FROM `detailCount`);
   SET @totalCuredCount=(SELECT SUM(`curedCount`) FROM `detailCount`);
   SET @totalConfirmedCount=(SELECT SUM(`confirmedCount`) FROM `detailCount`);
   SET @totalCurrentConfirmedCount=(SELECT SUM(`currentConfirmedCount`) FROM `detailCount`);
 
-  UPDATE detailCount SET currentConfirmedCount = @totalCurrentConfirmedCount, confirmedCount = @totalConfirmedCount, deadCount = @totalDeadCount, curedCount = @totalCuredCount WHERE `date`='1970-01-01' AND `provinceName`='全国';
+  UPDATE 
+    detailCount 
+  SET 
+    deadCount = @totalDeadCount, 
+    curedCount = @totalCuredCount, 
+    confirmedCount = @totalConfirmedCount, 
+    currentConfirmedCount = @totalCurrentConfirmedCount 
+  WHERE 
+    `date` = '1970-01-01' 
+    AND `provinceName` = '全国';
 
-  SELECT * FROM `detailCount` WHERE `provinceName`='全国';
-  SELECT * FROM `detailCount` WHERE `provinceName`='福建省';
+  SELECT
+    `date` AS '日期',
+    `provinceName` AS '省份',
+    `currentConfirmedCount` AS '近期确诊',
+    `confirmedCount` AS '确诊人数',
+    `deadCount` AS '总计死亡',
+    `curedCount` AS '总计治愈'
+     FROM `detailCount` WHERE `provinceName`='全国';
+
+  SELECT
+    `date` AS '日期',
+    `provinceName` AS '省份',
+    `currentConfirmedCount` AS '近期确诊',
+    `confirmedCount` AS '确诊人数',
+    `deadCount` AS '总计死亡',
+    `curedCount` AS '总计治愈'
+     FROM `detailCount` WHERE `provinceName`='福建省' LIMIT 10;
+
+  -- 确诊最多 
+  SELECT `provincename`          AS '确诊最多', 
+         `currentconfirmedcount` AS '近期确诊', 
+         `confirmedcount`        AS '确诊人数', 
+         `deadcount`             AS '总计死亡', 
+         `curedcount`            AS '总计治愈' 
+  FROM   detailcount 
+  WHERE  confirmedcount = (SELECT Max(confirmedcount) 
+                           FROM   (SELECT confirmedcount, 
+                                          `provincename` 
+                                   FROM   `detailcount` 
+                                   ORDER  BY `date` DESC 
+                                   LIMIT  34) AS temp) 
+  LIMIT  1; 
+
+  -- 确诊最少 
+  SELECT `provincename`          AS '确诊最少', 
+         `currentconfirmedcount` AS '近期确诊', 
+         `confirmedcount`        AS '确诊人数', 
+         `deadcount`             AS '总计死亡', 
+         `curedcount`            AS '总计治愈' 
+  FROM   detailcount 
+  WHERE  confirmedcount = (SELECT Min(confirmedcount) 
+                           FROM   (SELECT confirmedcount, 
+                                          `provincename` 
+                                   FROM   `detailcount` 
+                                   ORDER  BY `date` DESC 
+                                   LIMIT  34) AS temp) 
+  LIMIT  1;
 END@@
 
 DELIMITER ;
