@@ -66,7 +66,7 @@ BEGIN
          `deadcount`             AS '总计死亡', 
          `curedcount`            AS '总计治愈' 
   FROM   detailcount 
-  WHERE  confirmedcount = (SELECT Max(confirmedcount) 
+  WHERE  confirmedcount = (SELECT MAX(confirmedcount) 
                            FROM   (SELECT confirmedcount, 
                                           `provincename` 
                                    FROM   `detailcount` 
@@ -81,7 +81,7 @@ BEGIN
          `deadcount`             AS '总计死亡', 
          `curedcount`            AS '总计治愈' 
   FROM   detailcount 
-  WHERE  confirmedcount = (SELECT Min(confirmedcount) 
+  WHERE  confirmedcount = (SELECT MIN(confirmedcount) 
                            FROM   (SELECT confirmedcount, 
                                           `provincename` 
                                    FROM   `detailcount` 
