@@ -104,3 +104,5 @@ INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confi
 ('2022-05-02', '宁夏回族自治区', 0, 122, 0, 122),
 ('2022-05-02', '澳门', 0, 82, 0, 82),
 ('2022-05-02', '西藏自治区', 0, 1, 0, 1);
+
+CALL totalSum();
