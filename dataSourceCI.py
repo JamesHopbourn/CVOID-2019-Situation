@@ -51,7 +51,7 @@ comb_text = f'{prev_data}\n\n{execute[:-2]};'
 comb_data = base64.b64encode(comb_text.encode('utf-8')).decode('utf-8')
 
 # 更新 dataSQL.sql
-if(today not int prev_data):
+if(today not in prev_data):
     update = requests.put(
         url=dataSQLpath,
         headers={"Authorization": f"token {github_token}"},
