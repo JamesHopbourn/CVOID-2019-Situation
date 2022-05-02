@@ -48,7 +48,6 @@ INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confi
 ('2022-05-01', '澳门', 0, 82, 0, 82),
 ('2022-05-01', '西藏自治区', 0, 1, 0, 1);
 
-
 INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
 ('2022-05-02', '香港', 261751, 330725, 9313, 59661),
 ('2022-05-02', '台湾', 136198, 150808, 868, 13742),
