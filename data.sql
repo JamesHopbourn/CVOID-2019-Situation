@@ -1,5 +1,7 @@
 CREATE DATABASE IF NOT EXISTS CVOID2019;
 
+USE CVOID2019
+
 CREATE TABLE IF NOT EXISTS `detailCount` (
   `date` date NOT NULL,
   `provinceName` varchar(20) NOT NULL,
@@ -10,8 +12,11 @@ CREATE TABLE IF NOT EXISTS `detailCount` (
   PRIMARY KEY (`date`,`provinceName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+DROP PROCEDURE IF EXISTS totalSum;
+
 DELIMITER @@
-CREATE PROCEDURE IF NOT EXISTS totalSum()
+
+CREATE PROCEDURE totalSum()
 BEGIN
   INSERT IGNORE INTO detailCount (`date`, `provinceName`, `currentConfirmedCount`, `confirmedCount`, `deadCount`, `curedCount`) VALUES ('1970-01-01', '全国', '', '', '', '');
 
@@ -27,8 +32,6 @@ BEGIN
 END@@
 
 DELIMITER ;
-
-USE CVOID2019;
 
 INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
 ('2022-05-01', '香港', 261858, 330670, 9308, 59504),
