@@ -29,7 +29,6 @@ for i in range(len(data)):
                     data[i]["deadCount"], data[i]["curedCount"]))
     execute += ',\n'
 
-
 # 报错推送到微信
 def statusCheck(funcName, statusCode):
     if (funcName == '创建文件' and statusCode == 422):
