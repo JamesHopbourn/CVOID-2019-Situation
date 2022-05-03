@@ -67,8 +67,7 @@ BEGIN
          `curedcount`            AS '总计治愈' 
   FROM   detailcount 
   WHERE  confirmedcount = (SELECT MAX(confirmedcount) 
-                           FROM   (SELECT confirmedcount, 
-                                          `provincename` 
+                           FROM   (SELECT confirmedcount
                                    FROM   `detailcount` 
                                    ORDER  BY `date` DESC 
                                    LIMIT  34) AS temp) 
@@ -82,8 +81,7 @@ BEGIN
          `curedcount`            AS '总计治愈' 
   FROM   detailcount 
   WHERE  confirmedcount = (SELECT MIN(confirmedcount) 
-                           FROM   (SELECT confirmedcount, 
-                                          `provincename` 
+                           FROM   (SELECT confirmedcount
                                    FROM   `detailcount` 
                                    ORDER  BY `date` DESC 
                                    LIMIT  34) AS temp) 
