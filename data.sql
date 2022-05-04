@@ -35,29 +35,16 @@ BEGIN
     confirmedCount = @totalConfirmedCount, 
     currentConfirmedCount = @totalCurrentConfirmedCount 
   WHERE 
-    `date` = '1970-01-01' 
-    AND `provinceName` = '全国';
+    `provinceName` = '全国';
 
   -- 全国疫情统计
-  SELECT `date`                  AS '日期', 
-         `provincename`          AS '省份', 
+  SELECT `provincename`          AS '省份', 
          `currentconfirmedcount` AS '近期确诊', 
          `confirmedcount`        AS '确诊人数', 
          `deadcount`             AS '总计死亡', 
          `curedcount`            AS '总计治愈' 
   FROM   `detailcount` 
   WHERE  `provincename` = '全国'; 
-
-  -- 福建省近10天疫情情况
-  SELECT `date`                  AS '日期', 
-         `provincename`          AS '省份', 
-         `currentconfirmedcount` AS '近期确诊', 
-         `confirmedcount`        AS '确诊人数', 
-         `deadcount`             AS '总计死亡', 
-         `curedcount`            AS '总计治愈' 
-  FROM   `detailcount` 
-  WHERE  `provincename` = '福建省' 
-  LIMIT  10;
 
   -- 确诊最多 
   SELECT `provincename`          AS '确诊最多', 
@@ -86,6 +73,17 @@ BEGIN
                                    ORDER  BY `date` DESC 
                                    LIMIT  34) AS temp) 
   LIMIT  1;
+
+  -- 福建省近10天疫情情况
+  SELECT `date`                  AS '日期', 
+         `provincename`          AS '省份', 
+         `currentconfirmedcount` AS '近期确诊', 
+         `confirmedcount`        AS '确诊人数', 
+         `deadcount`             AS '总计死亡', 
+         `curedcount`            AS '总计治愈' 
+  FROM   `detailcount` 
+  WHERE  `provincename` = '福建省' 
+  LIMIT  10;
 END@@
 
 DELIMITER ;
