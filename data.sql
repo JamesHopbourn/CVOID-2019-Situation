@@ -34,8 +34,7 @@ BEGIN
     curedCount = @totalCuredCount, 
     confirmedCount = @totalConfirmedCount, 
     currentConfirmedCount = @totalCurrentConfirmedCount 
-  WHERE 
-    `provinceName` = '全国';
+  WHERE  `provinceName` = '全国';
 
   -- 全国疫情统计
   SELECT `provincename`          AS '省份', 
