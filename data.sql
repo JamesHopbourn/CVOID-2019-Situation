@@ -28,18 +28,18 @@ BEGIN
   SET @totalCurrentConfirmedCount=(SELECT SUM(`currentConfirmedCount`) FROM `detailCount`);
 
   UPDATE 
-    detailCount 
+    `detailCount` 
   SET 
-    deadCount = @totalDeadCount, 
-    curedCount = @totalCuredCount, 
-    confirmedCount = @totalConfirmedCount, 
-    currentConfirmedCount = @totalCurrentConfirmedCount 
+    `deadCount` = @totalDeadCount, 
+    `curedCount` = @totalCuredCount, 
+    `confirmedCount` = @totalConfirmedCount, 
+    `currentConfirmedCount` = @totalCurrentConfirmedCount 
   WHERE  `provinceName` = '全国';
 
-  -- 全国疫情统计
+  -- 全国疫情
   SELECT `provincename`          AS '省份', 
          `currentconfirmedcount` AS '近期确诊', 
-         `confirmedcount`        AS '确诊人数', 
+         `confirmedcount`        AS '总计确诊', 
          `deadcount`             AS '总计死亡', 
          `curedcount`            AS '总计治愈' 
   FROM   `detailcount` 
@@ -48,12 +48,12 @@ BEGIN
   -- 确诊最多 
   SELECT `provincename`          AS '确诊最多', 
          `currentconfirmedcount` AS '近期确诊', 
-         `confirmedcount`        AS '确诊人数', 
+         `confirmedcount`        AS '总计确诊', 
          `deadcount`             AS '总计死亡', 
          `curedcount`            AS '总计治愈' 
-  FROM   detailcount 
-  WHERE  confirmedcount = (SELECT MAX(confirmedcount) 
-                           FROM   (SELECT confirmedcount
+  FROM   `detailcount` 
+  WHERE  `confirmedcount` = (SELECT MAX(`confirmedcount`) 
+                           FROM   (SELECT `confirmedcount`
                                    FROM   `detailcount` 
                                    ORDER  BY `date` DESC 
                                    LIMIT  34) AS temp) 
@@ -62,12 +62,12 @@ BEGIN
   -- 确诊最少 
   SELECT `provincename`          AS '确诊最少', 
          `currentconfirmedcount` AS '近期确诊', 
-         `confirmedcount`        AS '确诊人数', 
+         `confirmedcount`        AS '总计确诊', 
          `deadcount`             AS '总计死亡', 
          `curedcount`            AS '总计治愈' 
-  FROM   detailcount 
-  WHERE  confirmedcount = (SELECT MIN(confirmedcount) 
-                           FROM   (SELECT confirmedcount
+  FROM   `detailcount` 
+  WHERE  `confirmedcount` = (SELECT MIN(`confirmedcount`) 
+                           FROM   (SELECT `confirmedcount`
                                    FROM   `detailcount` 
                                    ORDER  BY `date` DESC 
                                    LIMIT  34) AS temp) 
@@ -77,7 +77,7 @@ BEGIN
   SELECT `date`                  AS '日期', 
          `provincename`          AS '省份', 
          `currentconfirmedcount` AS '近期确诊', 
-         `confirmedcount`        AS '确诊人数', 
+         `confirmedcount`        AS '总计确诊', 
          `deadcount`             AS '总计死亡', 
          `curedcount`            AS '总计治愈' 
   FROM   `detailcount` 
