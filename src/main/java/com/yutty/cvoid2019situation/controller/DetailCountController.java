@@ -59,8 +59,8 @@ public class DetailCountController {
      * @param pageSize
      * @return
      */
-    //http://localhost:8089/detail/page?page=1&pageSize=10
-    @GetMapping("/today")
+    //http://localhost:8089/api/today?page=1&pageSize=10
+    @GetMapping("today")
     public R<Page> page(int page, int pageSize){
         //分页构造器
         Page<Detailcount> pageInfo =new Page<>(page,pageSize);
