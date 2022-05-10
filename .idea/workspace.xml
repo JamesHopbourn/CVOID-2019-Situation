@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28847d0c-449c-4cb8-840b-a93e52c35a2c" name="Changes" comment="1">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_5_4_19_27__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_5_4_19_27__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_5_6_9_42__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_5_6_9_42__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_5_6_9_42__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2022_5_6_9_42__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_5_4_18_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_5_4_18_08__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/Cvoid2019SituationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/java/com/yutty/cvoid2019situation/Cvoid2019SituationApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/common/JacksonObjectMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/java/com/yutty/cvoid2019situation/common/JacksonObjectMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/common/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/java/com/yutty/cvoid2019situation/common/R.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/config/MybatisPlusConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/java/com/yutty/cvoid2019situation/config/MybatisPlusConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/java/com/yutty/cvoid2019situation/config/WebMvcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/controller/DetailCountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/java/com/yutty/cvoid2019situation/controller/DetailCountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/entity/Detailcount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/java/com/yutty/cvoid2019situation/entity/Detailcount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/mapper/DetailCountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/java/com/yutty/cvoid2019situation/mapper/DetailCountMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/service/DetailCountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/java/com/yutty/cvoid2019situation/service/DetailCountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/service/impl/DetailCountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/java/com/yutty/cvoid2019situation/service/impl/DetailCountServiceImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="28847d0c-449c-4cb8-840b-a93e52c35a2c" name="Changes" comment="1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -148,6 +132,7 @@
       <workItem from="1651997665641" duration="16000" />
       <workItem from="1652026342943" duration="175000" />
       <workItem from="1652181183045" duration="161000" />
+      <workItem from="1652181417323" duration="327000" />
     </task>
     <task id="LOCAL-00001" summary="环境搭建">
       <created>1651640908090</created>
