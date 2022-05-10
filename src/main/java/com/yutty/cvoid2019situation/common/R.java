@@ -1,7 +1,5 @@
 package com.yutty.cvoid2019situation.common;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.yutty.cvoid2019situation.entity.Detailcount;
 import lombok.Data;
 
 import java.io.Serializable;
