@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="CVOID-2019-Situation" target="1.5" />
+      <module name="CVOID-2019-Situation" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
