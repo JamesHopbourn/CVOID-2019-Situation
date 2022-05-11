@@ -47,7 +47,7 @@
       <MavenGeneralSettings>
         <option name="alwaysUpdateSnapshots" value="true" />
         <option name="localRepository" value="D:\maven\local" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../../maven/apache-maven-3.3.9" />
+        <option name="mavenHome" value="$USER_HOME$/maven/apache-maven-3.3.9" />
         <option name="userSettingsFile" value="D:\maven\apache-maven-3.3.9\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -103,18 +103,18 @@
     </configuration>
     <configuration name="Cvoid2019SituationApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="CVOID-2019-Situation" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="java.com.yutty.cvoid2019situation.Cvoid2019SituationApplication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="java.com.yutty.cvoid2019situation.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="java.com.yutty.cvoid2019situation.Cvoid2019SituationApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Cvoid2019SituationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="Cvoid2019SituationApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
       <module name="CVOID-2019-Situation" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.yutty.cvoid2019situation.Cvoid2019SituationApplication" />
       <method v="2">
@@ -123,6 +123,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.Cvoid2019SituationApplication" />
         <item itemvalue="Spring Boot.Cvoid2019SituationApplication (1)" />
       </list>
     </recent_temporary>

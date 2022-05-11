@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo</title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="server.js"></script>
+    <script type="text/javascript" src="time.js"></script>
+</head>
+<body>
+    <!-- 今日总览 -->
+    <div>
+        <input id="input">
+        <button id="btn_search">搜索</button>
+    </div>
+    <div width="400px">
+        <table id="table_1" border ="1px" >
+            <tr>
+                <th>名称</th>
+                <th>近期确诊</th>
+                <th>确诊总数</th>
+                <th>死亡总数</th>
+                <th>治愈总数</th>
+            </tr>
+        </table>
+    </div>
+   <br>
+    <!-- 各省数据 -->
+    <div width="500px" >
+        <table id="table_2" border="1px" >
+            <tr>
+                <th>省份</th>
+                <th>近期确诊<button>*</button></th>
+                <th>确诊总数<button>*</button></th>
+                <th>死亡总数<button>*</button></th>
+                <th>治愈总数<button>*</button></th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
