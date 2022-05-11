@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f77ec7-6393-4acb-bef4-3cb392fcfc6f" name="Changes" comment="解决了前后端分离的跨域问题，删除了一些冗余代码">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e9f77ec7-6393-4acb-bef4-3cb392fcfc6f" name="Changes" comment="解决了前后端分离的跨域问题，删除了一些冗余代码" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,16 +56,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "WebServerToolWindowFactoryState": "false",
-    "spring.configuration.checksum": "0089419a39450efe67a03e046bb2ea5f"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;0089419a39450efe67a03e046bb2ea5f&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\code\CVOID-2019-Situation\src\main\java" />
@@ -141,6 +139,7 @@
       <workItem from="1652244415633" duration="15171000" />
       <workItem from="1652267095604" duration="1898000" />
       <workItem from="1652276225973" duration="353000" />
+      <workItem from="1652284600810" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="环境搭建">
       <created>1651640908090</created>
