@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="28847d0c-449c-4cb8-840b-a93e52c35a2c" name="Changes" comment="新增了确诊总数，治愈总数，死亡总数的排序">
-=======
-    <list default="true" id="28847d0c-449c-4cb8-840b-a93e52c35a2c" name="Changes" comment="显示今日的数据">
->>>>>>> origin/master
+    <list default="true" id="e9f77ec7-6393-4acb-bef4-3cb392fcfc6f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/config/CorsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/controller/DetailCountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/controller/DetailCountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yutty/cvoid2019situation/controller/DetailCountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yutty/cvoid2019situation/controller/DetailCountController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +77,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -136,7 +132,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="28847d0c-449c-4cb8-840b-a93e52c35a2c" name="Changes" comment="" />
+      <changelist id="e9f77ec7-6393-4acb-bef4-3cb392fcfc6f" name="Changes" comment="" />
       <created>1651639791609</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -151,11 +147,9 @@
       <workItem from="1652181417323" duration="614000" />
       <workItem from="1652182602761" duration="2388000" />
       <workItem from="1652242695828" duration="1244000" />
-<<<<<<< HEAD
       <workItem from="1652244415633" duration="16676000" />
-=======
       <workItem from="1652244415633" duration="15171000" />
->>>>>>> origin/master
+      <workItem from="1652267095604" duration="386000" />
     </task>
     <task id="LOCAL-00001" summary="环境搭建">
       <created>1651640908090</created>
@@ -297,7 +291,6 @@
       <option name="project" value="LOCAL" />
       <updated>1652254782234</updated>
     </task>
-<<<<<<< HEAD
     <task id="LOCAL-00021" summary="新增了确诊总数，治愈总数，死亡总数的排序">
       <created>1652260270614</created>
       <option name="number" value="00021" />
@@ -305,10 +298,7 @@
       <option name="project" value="LOCAL" />
       <updated>1652260270614</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
-=======
     <option name="localTasksCounter" value="21" />
->>>>>>> origin/master
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,18 +316,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="环境搭建" />
-    <MESSAGE value="修改了一些配置" />
-    <MESSAGE value="增加了分页功能" />
-    <MESSAGE value="1" />
-    <MESSAGE value="省内疫情数据分页查询" />
-    <MESSAGE value="全国当前疫情确诊数量降序排序" />
-    <MESSAGE value="显示今日的数据" />
-<<<<<<< HEAD
-    <MESSAGE value="新增了确诊总数，治愈总数，死亡总数的排序" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增了确诊总数，治愈总数，死亡总数的排序" />
-=======
     <option name="LAST_COMMIT_MESSAGE" value="显示今日的数据" />
->>>>>>> origin/master
   </component>
 </project>
