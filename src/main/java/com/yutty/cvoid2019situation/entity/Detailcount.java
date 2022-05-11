@@ -10,6 +10,7 @@ import java.util.Date;
 
 @Data
 public class Detailcount implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     private Long id;
@@ -25,6 +26,5 @@ public class Detailcount implements Serializable {
     private Integer deadCount;
 
     private Integer curedCount;
-
 
 }
