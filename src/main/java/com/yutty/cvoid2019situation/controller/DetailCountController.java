@@ -26,10 +26,10 @@ public class DetailCountController {
 
 
     /**
-     * 按降序显示数据
+     * 按当前确诊降序显示数据
      * @return
      */
-    //http://localhost:8089/api/today?page=1&pageSize=10
+    //http://localhost:8089/api/today
     @GetMapping("/today")
     public R<List<Detailcount>> list(){
 
@@ -37,21 +37,28 @@ public class DetailCountController {
         LambdaQueryWrapper<Detailcount> lambdaQueryWrapper = new LambdaQueryWrapper<>();
         //添加过滤条件
         lambdaQueryWrapper.orderByDesc(Detailcount::getCurrentConfirmedCount);
-
-
         return R.success(detailCountService.list(lambdaQueryWrapper));
 
     }
+    /**
+     * 省内疫情数据分页查询
+     * @param page
+     * @param pageSize
+     * @param name
+     * @return
+     */
+    //http://localhost:8089/api/province?page=1&pageSize=10&name=福建
+    @GetMapping("/province")
+    public R<Page> getByName(int page,int pageSize,String name){
+        //构建查询条件，根据name查询
+        LambdaQueryWrapper<Detailcount> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.like(name!=null,Detailcount::getProvinceName,name);
+        Page<Detailcount> pageInfo = new Page<>(page,pageSize);
+        //根据更新时间降序排序
+        queryWrapper.orderByDesc(Detailcount::getId);
 
-
-
-    @GetMapping("/{id}")
-    public R<Detailcount> getById(@PathVariable Long id){
-        Detailcount detailcount = detailCountService.getById(id);
-        if(detailcount != null){
-            return R.success(detailcount);
-        }
-        return R.error("没有查询到");
+        detailCountService.page(pageInfo,queryWrapper);
+        return R.success(pageInfo);
     }
 
 }

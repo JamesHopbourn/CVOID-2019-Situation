@@ -1,8 +1,11 @@
 package com.yutty.cvoid2019situation.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Data
@@ -22,9 +25,6 @@ public class Detailcount implements Serializable {
     private Integer deadCount;
 
     private Integer curedCount;
-
-
-
 
 
 }
