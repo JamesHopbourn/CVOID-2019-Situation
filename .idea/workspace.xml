@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28847d0c-449c-4cb8-840b-a93e52c35a2c" name="Changes" comment="1">
+    <list default="true" id="28847d0c-449c-4cb8-840b-a93e52c35a2c" name="Changes" comment="全国当前疫情确诊数量降序排序">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/controller/DetailCountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/controller/DetailCountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/entity/Detailcount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/entity/Detailcount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yutty/cvoid2019situation/controller/DetailCountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yutty/cvoid2019situation/controller/DetailCountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yutty/cvoid2019situation/entity/Detailcount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yutty/cvoid2019situation/entity/Detailcount.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +140,8 @@
       <workItem from="1652181183045" duration="161000" />
       <workItem from="1652181417323" duration="614000" />
       <workItem from="1652182602761" duration="2388000" />
-      <workItem from="1652242695828" duration="319000" />
+      <workItem from="1652242695828" duration="1244000" />
+      <workItem from="1652244415633" duration="4320000" />
     </task>
     <task id="LOCAL-00001" summary="环境搭建">
       <created>1651640908090</created>
@@ -251,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652183947274</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="全国当前疫情确诊数量降序排序">
+      <created>1652243318589</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1652243318589</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +284,7 @@
     <MESSAGE value="修改了一些配置" />
     <MESSAGE value="增加了分页功能" />
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="全国当前疫情确诊数量降序排序" />
+    <option name="LAST_COMMIT_MESSAGE" value="全国当前疫情确诊数量降序排序" />
   </component>
 </project>
