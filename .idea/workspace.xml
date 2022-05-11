@@ -4,29 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28847d0c-449c-4cb8-840b-a93e52c35a2c" name="Changes" comment="全国当前疫情确诊数量降序排序">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_6_1_8_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_76_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_76_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_76_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_76_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_76_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_76_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_4_17.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_cache_2_6_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_6_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_6_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_6_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_6_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_3_19.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_3_19.xml" beforeDir="false" />
+    <list default="true" id="28847d0c-449c-4cb8-840b-a93e52c35a2c" name="Changes" comment="显示今日的数据">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/controller/DetailCountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/controller/DetailCountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/entity/Detailcount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/entity/Detailcount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yutty/cvoid2019situation/controller/DetailCountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yutty/cvoid2019situation/controller/DetailCountController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yutty/cvoid2019situation/entity/Detailcount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yutty/cvoid2019situation/entity/Detailcount.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +32,14 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -158,7 +147,7 @@
       <workItem from="1652181417323" duration="614000" />
       <workItem from="1652182602761" duration="2388000" />
       <workItem from="1652242695828" duration="1244000" />
-      <workItem from="1652244415633" duration="9672000" />
+      <workItem from="1652244415633" duration="15171000" />
     </task>
     <task id="LOCAL-00001" summary="环境搭建">
       <created>1651640908090</created>
@@ -293,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652249194032</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="显示今日的数据">
+      <created>1652254782234</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1652254782234</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,6 +313,7 @@
     <MESSAGE value="1" />
     <MESSAGE value="省内疫情数据分页查询" />
     <MESSAGE value="全国当前疫情确诊数量降序排序" />
-    <option name="LAST_COMMIT_MESSAGE" value="全国当前疫情确诊数量降序排序" />
+    <MESSAGE value="显示今日的数据" />
+    <option name="LAST_COMMIT_MESSAGE" value="显示今日的数据" />
   </component>
 </project>
