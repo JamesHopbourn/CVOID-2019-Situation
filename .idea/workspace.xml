@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="28847d0c-449c-4cb8-840b-a93e52c35a2c" name="Changes" comment="新增了确诊总数，治愈总数，死亡总数的排序">
+=======
+    <list default="true" id="28847d0c-449c-4cb8-840b-a93e52c35a2c" name="Changes" comment="显示今日的数据">
+>>>>>>> origin/master
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/controller/DetailCountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/controller/DetailCountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yutty/cvoid2019situation/controller/DetailCountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yutty/cvoid2019situation/controller/DetailCountController.class" afterDir="false" />
@@ -147,7 +151,11 @@
       <workItem from="1652181417323" duration="614000" />
       <workItem from="1652182602761" duration="2388000" />
       <workItem from="1652242695828" duration="1244000" />
+<<<<<<< HEAD
       <workItem from="1652244415633" duration="16676000" />
+=======
+      <workItem from="1652244415633" duration="15171000" />
+>>>>>>> origin/master
     </task>
     <task id="LOCAL-00001" summary="环境搭建">
       <created>1651640908090</created>
@@ -289,6 +297,7 @@
       <option name="project" value="LOCAL" />
       <updated>1652254782234</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00021" summary="新增了确诊总数，治愈总数，死亡总数的排序">
       <created>1652260270614</created>
       <option name="number" value="00021" />
@@ -297,6 +306,9 @@
       <updated>1652260270614</updated>
     </task>
     <option name="localTasksCounter" value="22" />
+=======
+    <option name="localTasksCounter" value="21" />
+>>>>>>> origin/master
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +333,11 @@
     <MESSAGE value="省内疫情数据分页查询" />
     <MESSAGE value="全国当前疫情确诊数量降序排序" />
     <MESSAGE value="显示今日的数据" />
+<<<<<<< HEAD
     <MESSAGE value="新增了确诊总数，治愈总数，死亡总数的排序" />
     <option name="LAST_COMMIT_MESSAGE" value="新增了确诊总数，治愈总数，死亡总数的排序" />
+=======
+    <option name="LAST_COMMIT_MESSAGE" value="显示今日的数据" />
+>>>>>>> origin/master
   </component>
 </project>
