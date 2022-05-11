@@ -45,7 +45,7 @@ public class DetailCountController {
     @GetMapping("/count")
     public R<List<Detailcount>> ConfirmedCount(){
         LambdaQueryWrapper<Detailcount> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.orderByDesc(Detailcount::getDate,Detailcount::getConfirmedCount).last("limit 34");
+        queryWrapper.orderByDesc(Detailcount::getDate,Detailcount::getConfirmedCount).last("limit 35");
         return R.success(detailCountService.list(queryWrapper));
 
     }
