@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.yutty.cvoid2019situation.service.DetailCountService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 @Slf4j
@@ -22,67 +24,26 @@ public class DetailCountController {
     private DetailCountService detailCountService;
 
 
-    /**
-     * 查询所有数据
-     * @return
-     */
-    /*@GetMapping
-    public List<Detailcount> getAll(){
-
-        return detailCountService.list();
-    }*/
 
     /**
-     * 按照current_confirme分页查询
-     * @param currentPage
-     * @param pageSize
-     * @param detailcount
+     * 按降序显示数据
      * @return
      */
-   /* @GetMapping("{currentPage}/{pageSize}")
-    public R getPage(@PathVariable int currentPage, @PathVariable int pageSize,Detailcount detailcount){
-
-        log.info("name:{}","detailcount:{}",detailcount);
-
-        IPage<Detailcount> page = detailCountService.getPage(currentPage, pageSize,detailcount);
-
-        //如果当前页码值大于总页码值，那么重新执行查询操作，使用最大页码值作为当前页码值
-        if (currentPage>page.getPages()){
-            page = detailCountService.getPage((int)page.getPages(),pageSize,detailcount);
-        }
-        return R.success(page);
-    }*/
-
-    /**
-     *
-     * @param page
-     * @param pageSize
-     * @return
-     */
-    //http://localhost:8089/detail/page?page=1&pageSize=10
+    //http://localhost:8089/api/today?page=1&pageSize=10
     @GetMapping("/today")
-    public R<Page> page(int page, int pageSize){
-        //分页构造器
-        Page<Detailcount> pageInfo =new Page<>(page,pageSize);
+    public R<List<Detailcount>> list(){
+
         //条件构造器
         LambdaQueryWrapper<Detailcount> lambdaQueryWrapper = new LambdaQueryWrapper<>();
         //添加过滤条件
         lambdaQueryWrapper.orderByDesc(Detailcount::getCurrentConfirmedCount);
 
-        detailCountService.page(pageInfo,lambdaQueryWrapper);
-        return R.success(pageInfo);
+
+        return R.success(detailCountService.list(lambdaQueryWrapper));
 
     }
-//
-//    @GetMapping("/province")
-//    public R<List<Detailcount>> list(Detailcount detailcount){
-//        //构造查询条件
-//        LambdaQueryWrapper<Detailcount> queryWrapper = new LambdaQueryWrapper<>();
-//
-//
-//
-//
-//    }
+
+
 
     @GetMapping("/{id}")
     public R<Detailcount> getById(@PathVariable Long id){
