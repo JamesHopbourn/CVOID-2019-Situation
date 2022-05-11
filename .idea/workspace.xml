@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f77ec7-6393-4acb-bef4-3cb392fcfc6f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/config/CorsConfig.java" afterDir="false" />
+    <list default="true" id="e9f77ec7-6393-4acb-bef4-3cb392fcfc6f" name="Changes" comment="显示今日的数据">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yutty/cvoid2019situation/controller/DetailCountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yutty/cvoid2019situation/controller/DetailCountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/time.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,25 +60,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "WebServerToolWindowFactoryState": "false",
+    "spring.configuration.checksum": "0089419a39450efe67a03e046bb2ea5f"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\code\CVOID-2019-Situation\src\main\java" />
@@ -151,6 +142,7 @@
       <workItem from="1652244415633" duration="16676000" />
       <workItem from="1652244415633" duration="15171000" />
       <workItem from="1652267095604" duration="386000" />
+      <workItem from="1652276693512" duration="1022000" />
     </task>
     <task id="LOCAL-00001" summary="环境搭建">
       <created>1651640908090</created>
