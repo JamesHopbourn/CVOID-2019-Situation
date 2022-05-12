@@ -62,6 +62,7 @@ window.onload=function(){
             var html=[];
             var html_max=[];
             var html_min=[];
+            
             //省份数据
             for(var i = 0 ; i<len ; i ++){
                 html.push("<tr><td>"+list[i]["provinceName"]+"</td>");
@@ -133,8 +134,6 @@ window.onload=function(){
                     count_today="DESC";
                     $("#table_2").append(html.join(""));
                 }
-                
-                
             },
             error:function(){
                 alert("似乎出了些问题，请稍后再试")
@@ -181,8 +180,6 @@ window.onload=function(){
                     count_count="DESC";
                     $("#table_2").append(html.join(""));
                 }
-                
-                
             },
             error:function(){
                 alert("似乎出了些问题，请稍后再试")
@@ -229,8 +226,6 @@ window.onload=function(){
                     count_dead="DESC";
                     $("#table_2").append(html.join(""));
                 }
-                
-                
             },
             error:function(){
                 alert("似乎出了些问题，请稍后再试")
@@ -277,35 +272,16 @@ window.onload=function(){
                     count_cured="DESC";
                     $("#table_2").append(html.join(""));
                 }
-                
-                
             },
             error:function(){
                 alert("似乎出了些问题，请稍后再试")
             }
         })
     }
-    
+    $("#input").keydown(function(event){
+        if(event.keyCode == 13){
+            searchProvice();
+        }
+    });
 }
 
-// //省份搜索
-// btn_search.onclick=function(){
-//     window.location.href='./search.html'"
-//     // if(!oinput.value){
-//     //     alert("输入不能为空");
-//     // }else{
-//     //     $.ajax({
-//     //         method:"GET",
-//     //         url:"http://localhost:8089/api/province?page=1&pageSize=10&name="+oinput.value,
-//     //         success:function(result){
-                
-//     //         },
-//     //         error:function(){
-//     //             alert("无效的输入值");
-//     //         }
-            
-//     //     })
-//     // }
-
-    
-// }
