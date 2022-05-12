@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f77ec7-6393-4acb-bef4-3cb392fcfc6f" name="Changes" comment="解决了前后端分离的跨域问题，删除了一些冗余代码" />
+    <list default="true" id="e9f77ec7-6393-4acb-bef4-3cb392fcfc6f" name="Changes" comment="删除了“听我说谢谢你”">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/bootstrap-table-locale-all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/table.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,6 +146,8 @@
       <workItem from="1652267095604" duration="1898000" />
       <workItem from="1652276225973" duration="353000" />
       <workItem from="1652284600810" duration="23000" />
+      <workItem from="1652286155150" duration="2250000" />
+      <workItem from="1652326984580" duration="7853000" />
     </task>
     <task id="LOCAL-00001" summary="环境搭建">
       <created>1651640908090</created>
@@ -302,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652267780827</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="删除了“听我说谢谢你”">
+      <created>1652286307051</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1652286307051</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,6 +338,7 @@
     <MESSAGE value="解决前后端分离的跨域问题，删除了一些冗余代码" />
     <MESSAGE value="显示今日的数据" />
     <MESSAGE value="解决了前后端分离的跨域问题，删除了一些冗余代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="解决了前后端分离的跨域问题，删除了一些冗余代码" />
+    <MESSAGE value="删除了“听我说谢谢你”" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除了“听我说谢谢你”" />
   </component>
 </project>

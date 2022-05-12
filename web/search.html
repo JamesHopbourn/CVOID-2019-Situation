@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>demo</title>
+    <title>Document</title>
+    <!-- <script type="text/javascript" src="server.js"></script> -->
     <script type="text/javascript" src="javescript/jquery.js"></script>
-    <script type="text/javascript" src="javescript/server.js"></script>
+    <script type="text/javascript" src="javescript/search.js"></script>
     <script type="text/javascript">
         function searchProvice(){
             var name = document.getElementById("input").value
@@ -15,7 +16,6 @@
     </script>
 </head>
 <body>
-    <!-- 搜索框 -->
     <div>
         <button onclick="window.location.href='/index.html'" >首页</button>
     </div>
@@ -25,46 +25,19 @@
         <input id="input">
         <button onclick=searchProvice() id="btn_search">搜索</button>
     </div>
-
-    <!-- 今日总览 -->
     <div width="400px">
-        <table id="table_1" border ="1px" >
+        <table id="table_search" border ="1px" >
             <!-- 表头 -->
             <thead>
                 <tr>
-                    <th>名称</th>
+                    <th>日期</th>
                     <th>近期确诊</th>
                     <th>确诊总数</th>
                     <th>死亡总数</th>
                     <th>治愈总数</th>
                 </tr>
             </thead>
-            <tbody id="tbody_1">
-                <tr id="tbody_nation"></tr>
-                <tr id="tbody_fujian"></tr>
-                <tr id="tbody_max"></tr>
-                <tr id="tbody_min"></tr>
-            </tbody>
         </table>
     </div>
-   <br>
-
-    <!-- 各省数据 -->
-    <div width="500px" >
-        <table id="table_2" border="1px" >
-            <!-- 表头 -->
-            <thead>
-                <tr>
-                    <th>省份</th>
-                    <th><button id="btn_today">近期确诊</button></th>
-                    <th><button id="btn_count">确诊总数</button></th>
-                    <th><button id="btn_dead">死亡总数</button></th>
-                    <th><button id="btn_cured">治愈总数</button></th>
-                </tr>
-            </thead>
-            <tbody id="tbody_2"></tbody>
-        </table>
-    </div>
-
 </body>
 </html>
