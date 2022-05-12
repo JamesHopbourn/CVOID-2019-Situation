@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <!-- <script type="text/javascript" src="server.js"></script> -->
     <script type="text/javascript" src="javescript/jquery.js"></script>
     <script type="text/javascript" src="javescript/search.js"></script>
@@ -16,15 +17,12 @@
     </script>
 </head>
 <body>
-    <div>
-        <button onclick="window.location.href='/index.html'" >首页</button>
-    </div>
-    <div>
-        <button onclick="window.location.href=''" >防疫科学小知识</button>
-        <button onclick="window.location.href=''" >疫苗接种注意事项</button>
-        <input id="input">
-        <button onclick=searchProvice() id="btn_search">搜索</button>
-    </div>
+    <ul>
+        <li><a class="a1"  href="index.html">首页</a></li>
+        <li><a class="a2"  href="knowledge.html">防疫科学小知识</a></li>
+         <li><a class="a3"  href="notice.html">疫苗接种注意事项</a></li>
+        <li style="float:right" ><input class="input" id="input"><button class="btn" onclick=searchProvice() id="btn_search">搜索</button></li>
+    </ul>
     <div width="400px">
         <table id="table_search" border ="1px" >
             <!-- 表头 -->
