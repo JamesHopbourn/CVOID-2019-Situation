@@ -11,9 +11,14 @@
     <script type="text/javascript">
         function searchProvice(){
             var name = document.getElementById("input").value
-            window.location.href='./search.html?name=' + name
+            if(name!=""){
+                window.location.href='./search.html?name=' + name
+            }else{
+                alert("输入不能为空！")
+            }
         }
     </script>
+
 </head>
 <body>
     <!-- 搜索框 -->
