@@ -6,9 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="e9f77ec7-6393-4acb-bef4-3cb392fcfc6f" name="Changes" comment="删除了“听我说谢谢你”">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/Cvoid2019SituationApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yutty/cvoid2019situation/Cvoid2019SituationApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/image/background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/javescript/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/javescript/search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/javescript/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/javescript/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/knowledge.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/knowledge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/notice.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/notice.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +161,8 @@
       <workItem from="1652416984046" duration="1323000" />
       <workItem from="1652436557218" duration="109000" />
       <workItem from="1652436907994" duration="1596000" />
+      <workItem from="1652443223431" duration="547000" />
+      <workItem from="1652443789876" duration="1266000" />
     </task>
     <task id="LOCAL-00001" summary="环境搭建">
       <created>1651640908090</created>

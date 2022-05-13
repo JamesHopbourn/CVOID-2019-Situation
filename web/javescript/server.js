@@ -29,7 +29,7 @@ window.onload=function(){
         var len = list.length;
         var html=[];
         for(var i = 0 ; i<len ; i ++){
-            html.push("<tr><td>"+list[i]["provinceName"]+"</td>");
+            html.push("<tr><td id='td_province'>"+list[i]["provinceName"]+"</td>");
             html.push("<td>"+list[i]["currentConfirmedCount"]+"</td>");
             html.push("<td>"+list[i]["confirmedCount"]+"</td>");
             html.push("<td>"+list[i]["deadCount"]+"</td>");
@@ -44,7 +44,7 @@ window.onload=function(){
         var len = list.length;
         var html=[];
         for(var i = len-1 ; i >= 0 ; i --){
-            html.push("<tr><td>"+list[i]["provinceName"]+"</td>");
+            html.push("<tr><td id='td_province'>"+list[i]["provinceName"]+"</td>");
             html.push("<td>"+list[i]["currentConfirmedCount"]+"</td>");
             html.push("<td>"+list[i]["confirmedCount"]+"</td>");
             html.push("<td>"+list[i]["deadCount"]+"</td>");
@@ -62,7 +62,7 @@ window.onload=function(){
         success:function(result){
             var list = result['data']['records'][0];
             var html = [];
-            html.push("<td>"+"全国"+"</td>");
+            html.push("<td class='columnColor'>"+"全国"+"</td>");
             html.push("<td>"+list["currentConfirmedCount"]+"</td>");
             html.push("<td>"+list["confirmedCount"]+"</td>");
             html.push("<td>"+list["deadCount"]+"</td>");
@@ -81,7 +81,7 @@ window.onload=function(){
         success:function(result){
             var list = result['data']['records'][0];
             var html = [];
-            html.push("<td>"+"福建省"+"</td>");
+            html.push("<td class='columnColor'>"+"福建省"+"</td>");
             html.push("<td>"+list["currentConfirmedCount"]+"</td>");
             html.push("<td>"+list["confirmedCount"]+"</td>");
             html.push("<td>"+list["deadCount"]+"</td>");
@@ -107,7 +107,7 @@ window.onload=function(){
             var html_min=[];
             
             //确诊最多
-            html_max.push("<td>"+"确诊最多"+"</td>");
+            html_max.push("<td class='columnColor'>"+"确诊最多"+"</td>");
             html_max.push("<td>"+list[0]["currentConfirmedCount"]+"</td>");
             html_max.push("<td>"+list[0]["confirmedCount"]+"</td>");
             html_max.push("<td>"+list[0]["deadCount"]+"</td>");
@@ -115,7 +115,7 @@ window.onload=function(){
             $("#tbody_max").append(html_max.join(""));
 
             //确诊最少
-            html_min.push("<td>"+"确诊最少"+"</td>");
+            html_min.push("<td class='columnColor'>"+"确诊最少"+"</td>");
             html_min.push("<td>"+list[len-1]["currentConfirmedCount"]+"</td>");
             html_min.push("<td>"+list[len-1]["confirmedCount"]+"</td>");
             html_min.push("<td>"+list[len-1]["deadCount"]+"</td>");
@@ -169,7 +169,7 @@ window.onload=function(){
                     var len = list.length;
                     var html=[];
                     for(var i = 0 ; i<len-1 ; i ++){
-                        html.push("<tr><td>"+list[i]["provinceName"]+"</td>");
+                        html.push("<tr><td id='td_province'>"+list[i]["provinceName"]+"</td>");
                         html.push("<td>"+list[i]["currentConfirmedCount"]+"</td>");
                         html.push("<td>"+list[i]["confirmedCount"]+"</td>");
                         html.push("<td>"+list[i]["deadCount"]+"</td>");
@@ -184,7 +184,7 @@ window.onload=function(){
                     var len = list.length;
                     var html=[];
                     for(var i = len-2 ; i >= 0 ; i --){
-                        html.push("<tr><td>"+list[i]["provinceName"]+"</td>");
+                        html.push("<tr><td id='td_province'>"+list[i]["provinceName"]+"</td>");
                         html.push("<td>"+list[i]["currentConfirmedCount"]+"</td>");
                         html.push("<td>"+list[i]["confirmedCount"]+"</td>");
                         html.push("<td>"+list[i]["deadCount"]+"</td>");
