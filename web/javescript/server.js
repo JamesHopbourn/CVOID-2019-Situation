@@ -13,6 +13,47 @@ window.onload=function(){
     var count_count = "DESC";
     var count_dead = "DESC";
     var count_cured = "DESC";
+
+    //清空表格
+    function Delete(){
+        if (table_body !== "undefined") {
+            while(table_body .hasChildNodes()){
+                table_body .removeChild(table_body .lastChild)
+            }
+        } 
+    }
+
+    //降序打印表格
+    function Print_DESC(result){
+        var list = result['data'];
+        var len = list.length;
+        var html=[];
+        for(var i = 0 ; i<len ; i ++){
+            html.push("<tr><td>"+list[i]["provinceName"]+"</td>");
+            html.push("<td>"+list[i]["currentConfirmedCount"]+"</td>");
+            html.push("<td>"+list[i]["confirmedCount"]+"</td>");
+            html.push("<td>"+list[i]["deadCount"]+"</td>");
+            html.push("<td>"+list[i]["curedCount"]+"</td></tr>");
+        }
+        $("#table_2").append(html.join(""));
+    }
+
+    //升序打印表格
+    function Print_ASC(result){
+        var list = result['data'];
+        var len = list.length;
+        var html=[];
+        for(var i = len-1 ; i >= 0 ; i --){
+            html.push("<tr><td>"+list[i]["provinceName"]+"</td>");
+            html.push("<td>"+list[i]["currentConfirmedCount"]+"</td>");
+            html.push("<td>"+list[i]["confirmedCount"]+"</td>");
+            html.push("<td>"+list[i]["deadCount"]+"</td>");
+            html.push("<td>"+list[i]["curedCount"]+"</td></tr>");
+        }
+        $("#table_2").append(html.join(""));
+    }
+
+
     
     //展示全国数据
     $.ajax({
@@ -57,22 +98,14 @@ window.onload=function(){
         method:"GET",
         url:"http://localhost:8089/api/today",
         success:function(result){
+
+            Print_DESC(result)//降序打印表格
             var list = result['data'];
             var len = list.length;
             var html=[];
             var html_max=[];
             var html_min=[];
             
-            //省份数据
-            for(var i = 0 ; i<len ; i ++){
-                html.push("<tr><td>"+list[i]["provinceName"]+"</td>");
-                html.push("<td>"+list[i]["currentConfirmedCount"]+"</td>");
-                html.push("<td>"+list[i]["confirmedCount"]+"</td>");
-                html.push("<td>"+list[i]["deadCount"]+"</td>");
-                html.push("<td>"+list[i]["curedCount"]+"</td></tr>");
-            }
-            $("#tbody_2").append(html.join(""));
-
             //确诊最多
             html_max.push("<td>"+"确诊最多"+"</td>");
             html_max.push("<td>"+list[0]["currentConfirmedCount"]+"</td>");
@@ -101,38 +134,19 @@ window.onload=function(){
             method:"GET",
             url:"http://localhost:8089/api/today",
             success:function(result){
-                //删除表单
-                if (table_body !== "undefined") {
-                    while(table_body .hasChildNodes()){
-                        table_body .removeChild(table_body .lastChild)
-                    }
-                } 
+
+                Delete();//清空表格
+
                 if(count_today=="DESC"){//首次点击降序输出
-                    var list = result['data'];
-                    var len = list.length;
-                    var html=[];
-                    for(var i = 0 ; i<len ; i ++){
-                        html.push("<tr><td>"+list[i]["provinceName"]+"</td>");
-                        html.push("<td>"+list[i]["currentConfirmedCount"]+"</td>");
-                        html.push("<td>"+list[i]["confirmedCount"]+"</td>");
-                        html.push("<td>"+list[i]["deadCount"]+"</td>");
-                        html.push("<td>"+list[i]["curedCount"]+"</td></tr>");
-                    }
+
+                    Print_DESC(result)//降序打印表格
+
                     count_today="ASC";
-                    $("#table_2").append(html.join(""));
                 }else{//再次点击升序输出
-                    var list = result['data'];
-                    var len = list.length;
-                    var html=[];
-                    for(var i = len-1 ; i >= 0 ; i --){
-                        html.push("<tr><td>"+list[i]["provinceName"]+"</td>");
-                        html.push("<td>"+list[i]["currentConfirmedCount"]+"</td>");
-                        html.push("<td>"+list[i]["confirmedCount"]+"</td>");
-                        html.push("<td>"+list[i]["deadCount"]+"</td>");
-                        html.push("<td>"+list[i]["curedCount"]+"</td></tr>");
-                    }
+                   
+                    Print_ASC(result)//升序打印表格
+
                     count_today="DESC";
-                    $("#table_2").append(html.join(""));
                 }
             },
             error:function(){
@@ -147,12 +161,9 @@ window.onload=function(){
             method:"GET",
             url:"http://localhost:8089/api/count",
             success:function(result){
-                //删除表单
-                if (table_body !== "undefined") {
-                    while(table_body .hasChildNodes()){
-                        table_body .removeChild(table_body .lastChild)
-                    }
-                } 
+
+                Delete();//清空表格
+
                 if(count_count=="DESC"){//首次点击降序输出
                     var list = result['data'];
                     var len = list.length;
@@ -164,8 +175,10 @@ window.onload=function(){
                         html.push("<td>"+list[i]["deadCount"]+"</td>");
                         html.push("<td>"+list[i]["curedCount"]+"</td></tr>");
                     }
-                    count_count="ASC";
                     $("#table_2").append(html.join(""));
+
+                    count_count="ASC";
+
                 }else{//再次点击升序输出
                     var list = result['data'];
                     var len = list.length;
@@ -177,8 +190,10 @@ window.onload=function(){
                         html.push("<td>"+list[i]["deadCount"]+"</td>");
                         html.push("<td>"+list[i]["curedCount"]+"</td></tr>");
                     }
-                    count_count="DESC";
                     $("#table_2").append(html.join(""));
+
+                    count_count="DESC";
+
                 }
             },
             error:function(){
@@ -193,38 +208,21 @@ window.onload=function(){
             method:"GET",
             url:"http://localhost:8089/api/dead",
             success:function(result){
-                //删除表单
-                if (table_body !== "undefined") {
-                    while(table_body .hasChildNodes()){
-                        table_body .removeChild(table_body .lastChild)
-                    }
-                } 
+                
+                Delete();//清空表格
+                
                 if(count_dead=="DESC"){//首次点击降序输出
-                    var list = result['data'];
-                    var len = list.length;
-                    var html=[];
-                    for(var i = 0 ; i<len ; i ++){
-                        html.push("<tr><td>"+list[i]["provinceName"]+"</td>");
-                        html.push("<td>"+list[i]["currentConfirmedCount"]+"</td>");
-                        html.push("<td>"+list[i]["confirmedCount"]+"</td>");
-                        html.push("<td>"+list[i]["deadCount"]+"</td>");
-                        html.push("<td>"+list[i]["curedCount"]+"</td></tr>");
-                    }
+
+                    Print_DESC(result)//降序打印表格
+
                     count_dead="ASC";
-                    $("#table_2").append(html.join(""));
+
                 }else{//再次点击升序输出
-                    var list = result['data'];
-                    var len = list.length;
-                    var html=[];
-                    for(var i = len-1 ; i >= 0 ; i --){
-                        html.push("<tr><td>"+list[i]["provinceName"]+"</td>");
-                        html.push("<td>"+list[i]["currentConfirmedCount"]+"</td>");
-                        html.push("<td>"+list[i]["confirmedCount"]+"</td>");
-                        html.push("<td>"+list[i]["deadCount"]+"</td>");
-                        html.push("<td>"+list[i]["curedCount"]+"</td></tr>");
-                    }
+
+                    Print_ASC(result)//升序打印表格
+
                     count_dead="DESC";
-                    $("#table_2").append(html.join(""));
+
                 }
             },
             error:function(){
@@ -239,38 +237,22 @@ window.onload=function(){
             method:"GET",
             url:"http://localhost:8089/api/cured",
             success:function(result){
-                //删除表单
-                if (table_body !== "undefined") {
-                    while(table_body .hasChildNodes()){
-                        table_body .removeChild(table_body .lastChild)
-                    }
-                } 
+                
+                Delete();//清空表格
+                
                 if(count_cured=="DESC"){//首次点击降序输出
-                    var list = result['data'];
-                    var len = list.length;
-                    var html=[];
-                    for(var i = 0 ; i<len ; i ++){
-                        html.push("<tr><td>"+list[i]["provinceName"]+"</td>");
-                        html.push("<td>"+list[i]["currentConfirmedCount"]+"</td>");
-                        html.push("<td>"+list[i]["confirmedCount"]+"</td>");
-                        html.push("<td>"+list[i]["deadCount"]+"</td>");
-                        html.push("<td>"+list[i]["curedCount"]+"</td></tr>");
-                    }
+
+                    Print_DESC(result)//降序打印表格
+
                     count_cured="ASC";
-                    $("#table_2").append(html.join(""));
+
+                    
                 }else{//再次点击升序输出
-                    var list = result['data'];
-                    var len = list.length;
-                    var html=[];
-                    for(var i = len-1 ; i >= 0 ; i --){
-                        html.push("<tr><td>"+list[i]["provinceName"]+"</td>");
-                        html.push("<td>"+list[i]["currentConfirmedCount"]+"</td>");
-                        html.push("<td>"+list[i]["confirmedCount"]+"</td>");
-                        html.push("<td>"+list[i]["deadCount"]+"</td>");
-                        html.push("<td>"+list[i]["curedCount"]+"</td></tr>");
-                    }
+
+                    Print_ASC(result)//升序打印表格
+
                     count_cured="DESC";
-                    $("#table_2").append(html.join(""));
+
                 }
             },
             error:function(){
@@ -278,6 +260,8 @@ window.onload=function(){
             }
         })
     }
+
+    //监听回车按键，按下后搜索
     $("#input").keydown(function(event){
         if(event.keyCode == 13){
             searchProvice();
