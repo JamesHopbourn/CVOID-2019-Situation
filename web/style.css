@@ -68,7 +68,7 @@ li a:hover {
     
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
     /* margin: 20px; */
-	width:70%;
+	width:55%;
 	border-collapse:collapse;
 }
 #table_1 td, #table_1 th 
@@ -80,7 +80,7 @@ li a:hover {
 #table_1 th 
 {
 	font-size:1.1em;
-	text-align:left;
+	text-align:center;
 	padding-top:5px;
 	padding-bottom:4px;
 	background-color:#333;
@@ -102,7 +102,42 @@ li a:hover {
     
 	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
     /* margin: 20px; */
-	width:70%;
+	width:55%;
 	border-collapse:collapse;
+    background-color: rgb(175, 232, 223);
    
 }
+
+/* #table_1 tr{
+    width: 55%;
+} */
+body{
+    background-color: #10aeb5;
+}
+
+
+.d1{
+    width:2000px;
+    height:200px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+.d1 img{
+    width: 55%;
+    height: 180px;
+    text-align: center;
+
+}
+
+.sec{
+    background-color: #fff;
+    position: relative;
+    border-radius: .625rem;
+    margin: -.5rem 0 1.5rem;
+    padding: .917rem 1.0625rem 1.875rem;
+    
+}
+

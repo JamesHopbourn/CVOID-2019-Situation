@@ -21,13 +21,59 @@
 
 </head>
 <body>
+    <div>
+        <ul>
+            <li><a class="a1"  href="index.html">首页</a></li>
+            <li><a class="a2"  href="knowledge.html">防疫科学小知识</a></li>
+            <li><a class="a3"  href="notice.html">疫苗接种注意事项</a></li>
+            <li style="float:right" ><input class="input" id="input"><button class="btn" onclick=searchProvice() id="btn_search">搜索</button></li>
+        </ul>
+    </div>
+    <div class="d1">
+        <img src="/image/background.jpg">
+    </div>
+    
+    <section class="sec">  
+        <div class="d3">
+            <table id="table_1" border ="1px" align="center">
+    
+                <!-- 表头 -->
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>近期确诊</th>
+                        <th>确诊总数</th>
+                        <th>死亡总数</th>
+                        <th>治愈总数</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_1">
+                    <tr id="tbody_nation"></tr>
+                    <tr id="tbody_fujian"></tr>
+                    <tr id="tbody_max"></tr>
+                    <tr id="tbody_min"></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="d3" >
+            <table id="table_2" border="1px" align="center" >
+                <!-- 表头 -->
+                <thead>
+                    <tr>
+                        <th>省份</th>
+                        <th><button id="btn_today">近期确诊</button></th>
+                        <th><button id="btn_count">确诊总数</button></th>
+                        <th><button id="btn_dead">死亡总数</button></th>
+                        <th><button id="btn_cured">治愈总数</button></th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_2"></tbody>
+            </table>
+        </div>
+
+    </section>
     <!-- 搜索框 -->
-    <ul>
-        <li><a class="a1"  href="index.html">首页</a></li>
-        <li><a class="a2"  href="knowledge.html">防疫科学小知识</a></li>
-         <li><a class="a3"  href="notice.html">疫苗接种注意事项</a></li>
-        <li style="float:right" ><input class="input" id="input"><button class="btn" onclick=searchProvice() id="btn_search">搜索</button></li>
-    </ul>
+    
 
 
 
@@ -46,44 +92,11 @@
     </div> -->
 
     <!-- 今日总览 -->
-    <div width="400px">
-        <table id="table_1" border ="1px" align="center">
-            <!-- 表头 -->
-            <thead>
-                <tr>
-                    <th>名称</th>
-                    <th>近期确诊</th>
-                    <th>确诊总数</th>
-                    <th>死亡总数</th>
-                    <th>治愈总数</th>
-                </tr>
-            </thead>
-            <tbody id="tbody_1">
-                <tr id="tbody_nation"></tr>
-                <tr id="tbody_fujian"></tr>
-                <tr id="tbody_max"></tr>
-                <tr id="tbody_min"></tr>
-            </tbody>
-        </table>
-    </div>
+    
    <br>
 
     <!-- 各省数据 -->
-    <div width="500px" >
-        <table id="table_2" border="1px" align="center" >
-            <!-- 表头 -->
-            <thead>
-                <tr>
-                    <th>省份</th>
-                    <th><button id="btn_today">近期确诊</button></th>
-                    <th><button id="btn_count">确诊总数</button></th>
-                    <th><button id="btn_dead">死亡总数</button></th>
-                    <th><button id="btn_cured">治愈总数</button></th>
-                </tr>
-            </thead>
-            <tbody id="tbody_2"></tbody>
-        </table>
-    </div>
+   
 
 </body>
 </html>
