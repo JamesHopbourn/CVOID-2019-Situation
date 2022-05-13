@@ -83,7 +83,7 @@ public class DetailCountController {
      * @param name
      * @return
      */
-    //http://localhost:8089/api/province?page=1&pageSize=10&name=福建
+        //http://localhost:8089/api/province?page=1&pageSize=10&name=福建
     @GetMapping("/province")
     public R<Page> getByName(int page,int pageSize,String name){
         //构建查询条件，根据name查询,并根据id降序排序
