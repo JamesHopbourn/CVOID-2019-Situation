@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Slf4j
 @SpringBootApplication
 @ServletComponentScan
-@EnableTransactionManagement
+@EnableTransactionManagement              
 @EnableCaching //开启SpringCache注解方式的缓存
 public class Cvoid2019SituationApplication {
 

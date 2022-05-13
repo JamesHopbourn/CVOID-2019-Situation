@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>demo</title>
+    <title>主页</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="javescript/jquery.js"></script>
     <script type="text/javascript" src="javescript/server.js"></script>
@@ -29,14 +29,20 @@
             <li style="float:right" ><input class="input" id="input"><button class="btn" onclick=searchProvice() id="btn_search">搜索</button></li>
         </ul>
     </div>
-    <div class="d1">
-        <img src="/image/background.jpg">
+    <div class="d1" >
+        <header class="head" >
+            <h3 class="h3" data-text="新型冠状病毒肺炎">
+              
+            </h3>
+            <h1 class="h1" data-text="疫情实时大数据报告">
+               
+            </h1>
+        </header>
     </div>
     
     <section class="sec">  
-        <div class="d3">
-            <table id="table_1" border ="1px" align="center">
-    
+        <div class="d2">
+            <table id="table_search"  align="center"> 
                 <!-- 表头 -->
                 <thead>
                     <tr>
@@ -56,15 +62,15 @@
             </table>
         </div>
         <div class="d3" >
-            <table id="table_2" border="1px" align="center" >
+            <table id="table_2"  align="center">
                 <!-- 表头 -->
                 <thead>
                     <tr>
-                        <th>省份</th>
-                        <th><button id="btn_today">近期确诊</button></th>
-                        <th><button id="btn_count">确诊总数</button></th>
-                        <th><button id="btn_dead">死亡总数</button></th>
-                        <th><button id="btn_cured">治愈总数</button></th>
+                        <th class="td_1">省份</th>
+                        <th><button id="btn_today" class="btn_2">近期确诊</button></th>
+                        <th><button id="btn_count" class="btn_2">确诊总数</button></th>
+                        <th><button id="btn_dead" class="btn_2">死亡总数</button></th>
+                        <th><button id="btn_cured" class="btn_2">治愈总数</button></th>
                     </tr>
                 </thead>
                 <tbody id="tbody_2"></tbody>

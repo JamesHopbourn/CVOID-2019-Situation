@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>搜索</title>
     <link rel="stylesheet" href="style.css">
     <!-- <script type="text/javascript" src="server.js"></script> -->
     <script type="text/javascript" src="javescript/jquery.js"></script>
@@ -23,24 +23,27 @@
          <li><a class="a3"  href="notice.html">疫苗接种注意事项</a></li>
         <li style="float:right" ><input class="input" id="input"><button class="btn" onclick=searchProvice() id="btn_search">搜索</button></li>
     </ul>
-    <div width="400px">
-        <table id="table_search" border ="1px" >
-            <!-- 表头 -->
-            <thead>
-                <tr>
-                    <th>日期</th>
-                    <th>近期确诊</th>
-                    <th>确诊总数</th>
-                    <th>死亡总数</th>
-                    <th>治愈总数</th>
-                </tr>
-            </thead>
-            <tbody id="tbody_search"></tbody>
-        </table>
+    <div class="d_search">
+        <section class="sec">
+            <table id="table_2" >
+                <!-- 表头 -->
+                <thead>
+                    <tr>
+                        <th>日期</th>
+                        <th>近期确诊</th>
+                        <th>确诊总数</th>
+                        <th>死亡总数</th>
+                        <th>治愈总数</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody_search"></tbody>
+            </table>
+        </section>
+        
     </div>
-    <div>
+    <div class="d_btn">
         <button id="btn_up"><a>上一页</a></button>
-        <button id="btn_down"><a>下一页</a></button>
+        <button id="btn_down"><a><span>下一页</span></a></button>
     </div>
 </body>
 </html>

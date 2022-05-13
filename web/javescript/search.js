@@ -21,7 +21,7 @@ window.onload=function(){
         var len = list.length;
         var html=[];
         for(var i = 0 ; i<len ; i ++){
-            html.push("<tr><td>"+list[i]["date"]+"</td>");
+            html.push("<tr><td class='data'>"+list[i]["date"]+"</td>");
             html.push("<td>"+list[i]["currentConfirmedCount"]+"</td>");
             html.push("<td>"+list[i]["confirmedCount"]+"</td>");
             html.push("<td>"+list[i]["deadCount"]+"</td>");
