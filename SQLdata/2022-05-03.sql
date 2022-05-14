@@ -1,4 +1,4 @@
-INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-03', '香港', 261716, 330773, 9318, 59739),
 ('2022-05-03', '台湾', 159324, 173942, 876, 13742),
 ('2022-05-03', '上海市', 12988, 59344, 481, 45875),
