@@ -150,15 +150,13 @@ body {
 
 }
 
-.sec {
+.sec{
     background-color: #fff;
     position: relative;
     border-radius: .625rem;
     margin-left: 22.5%;
     margin-right: 22.5%;
     padding: .917rem 1.0625rem 1.875rem;
-    text-align: center;
-
 }
 
 .btn_2 {
