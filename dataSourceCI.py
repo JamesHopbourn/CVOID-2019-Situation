@@ -23,7 +23,7 @@ data = re.findall(r"(?<=window.getAreaStat =).*?(?=}catch)", str(resp.content, "
 data = json.loads(data[0])
 
 # 构建 SQL 语句
-execute = "INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES\n"
+execute = "INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES\n"
 for i in range(len(data)):
     execute += str((today, data[i]["provinceName"], data[i]["currentConfirmedCount"], data[i]["confirmedCount"],
                     data[i]["deadCount"], data[i]["curedCount"]))
