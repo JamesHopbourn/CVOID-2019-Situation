@@ -284,3 +284,9 @@ th {
     border: 2px;
     font-weight: 700;
 }
+
+#caption {
+    color: #10aeb5;
+    font-weight: 700;
+    font-size: 25px;
+}
