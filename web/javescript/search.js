@@ -46,6 +46,7 @@ window.onload = function () {
             alert("似乎出了些问题，请稍后再试")
         }
     })
+
     //跳转上一页
     btn_up.onclick = function () {
         if (page_num > 1) {
@@ -91,11 +92,6 @@ window.onload = function () {
 
     }
 
-    //监听回车按键，按下后搜索
-    $("#input").keydown(function (event) {
-        if (event.keyCode == 13) {
-            searchProvice();
-        }
-    });
+    
 
 }
