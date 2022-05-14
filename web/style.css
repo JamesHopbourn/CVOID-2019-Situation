@@ -285,8 +285,9 @@ th {
     font-weight: 700;
 }
 
-#caption {
+#province_name {
     color: #10aeb5;
+    margin-bottom: 30px;
     font-weight: 700;
     font-size: 25px;
 }
