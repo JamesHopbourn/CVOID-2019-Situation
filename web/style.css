@@ -20,7 +20,7 @@ li .a1 {
     background-color: #4CAF50;
 }
 
-li .a2 {
+li .a2 , .c1{
     display: block;
     color: white;
     text-align: center;
