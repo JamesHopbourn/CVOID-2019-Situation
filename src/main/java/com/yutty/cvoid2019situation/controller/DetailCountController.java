@@ -45,7 +45,7 @@ public class DetailCountController {
     @GetMapping("/count")
     public R<List<Detailcount>> ConfirmedCount(){
         LambdaQueryWrapper<Detailcount> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.orderByDesc(Detailcount::getDate,Detailcount::getConfirmedCount).last("limit 35");
+        queryWrapper.orderByDesc(Detailcount::getDate,Detailcount::getConfirmedCount).last("limit 34");
         return R.success(detailCountService.list(queryWrapper));
 
     }
@@ -92,8 +92,7 @@ public class DetailCountController {
         queryWrapper.orderByDesc(Detailcount::getId);
 
         Page<Detailcount> pageInfo = new Page<>(page,pageSize);
-        detailCountService.page(pageInfo,queryWrapper);
-        return R.success(pageInfo);
+        return R.success(detailCountService.page(pageInfo,queryWrapper));
     }
 
 }
