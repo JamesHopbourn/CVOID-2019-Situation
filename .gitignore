@@ -2,3 +2,4 @@ database.conf
 hello/
 testCode/
 target/
+.idea/
