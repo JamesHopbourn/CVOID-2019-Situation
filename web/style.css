@@ -20,7 +20,7 @@ li .a1 {
     background-color: #4CAF50;
 }
 
-li .a2 , .c1{
+li .a2 {
     display: block;
     color: white;
     text-align: center;
@@ -283,4 +283,10 @@ th {
     color: #10aeb5;
     border: 2px;
     font-weight: 700;
+}
+
+#caption {
+    color: #10aeb5;
+    font-weight: 700;
+    font-size: 25px;
 }

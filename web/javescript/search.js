@@ -6,7 +6,7 @@ window.onload = function () {
     var page_num = 1;
     var total;
 
-    $("#caption").append(name);
+    $("#caption").append(name+"历史疫情数据");
 
     //清空表格
     function Delete() {
