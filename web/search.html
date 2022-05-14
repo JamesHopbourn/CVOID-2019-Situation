@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>搜索</title>
     <link rel="stylesheet" href="style.css">
-    <!-- <script type="text/javascript" src="server.js"></script> -->
     <script type="text/javascript" src="javescript/jquery.js"></script>
     <script type="text/javascript" src="javescript/search.js"></script>
     <script type="text/javascript">
@@ -23,9 +22,12 @@
          <li><a class="a3"  href="notice.html">疫苗接种注意事项</a></li>
         <li style="float:right" ><input class="input" id="input"><button class="btn" onclick=searchProvice() id="btn_search">搜索</button></li>
     </ul>
+
     <div class="d_search">
         <section class="sec">
-            <table id="table_2" >
+            <table  id="table_2" >
+                <!-- 标题 -->
+                <caption id="caption"></caption>
                 <!-- 表头 -->
                 <thead>
                     <tr>
