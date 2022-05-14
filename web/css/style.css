@@ -225,7 +225,8 @@ body {
     border-collapse: collapse;
     background-color: #ffffff;
     font-size: 13px;
-    margin-top: 80px;
+    margin-top: 10px;
+    margin-bottom: 30px;
 
 }
 
@@ -288,4 +289,11 @@ th {
     margin-bottom: 30px;
     font-weight: 700;
     font-size: 25px;
+}
+
+#table_title {
+    color: #10aeb5;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 10px;
 }
