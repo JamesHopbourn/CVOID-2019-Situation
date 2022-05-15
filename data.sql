@@ -3,14 +3,16 @@ CREATE DATABASE IF NOT EXISTS CVOID2019;
 USE CVOID2019;
 
 CREATE TABLE IF NOT EXISTS `detailCount` (
-  `date` date NOT NULL COMMENT '主键',
-  `provinceName` varchar(20) NOT NULL COMMENT '主键',
-  `currentConfirmedCount` int(10) NOT NULL,
-  `confirmedCount` int(10) NOT NULL,
-  `deadCount` int(10) NOT NULL,
-  `curedCount` int(10) NOT NULL,
-  PRIMARY KEY (`date`, `provinceName`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `province_name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `current_confirmed_count` int(11) NOT NULL,
+  `confirmed_count` int(11) NOT NULL,
+  `dead_count` int(11) NOT NULL,
+  `cured_count` int(11) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE `unique_idx`(`province_name`, `date`)
+) ENGINE = InnoDB AUTO_INCREMENT = 0 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 DROP PROCEDURE IF EXISTS totalSum;
 
@@ -18,56 +20,59 @@ DELIMITER @@
 
 CREATE PROCEDURE totalSum()
 BEGIN
-  INSERT IGNORE INTO detailCount (`date`, `provinceName`, `currentConfirmedCount`, `confirmedCount`, `deadCount`, `curedCount`) 
+  INSERT IGNORE INTO detailCount (`date`, `province_name`, `current_confirmed_count`, `confirmed_count`, `dead_count`, `cured_count`) 
   VALUES 
     ('1970-01-01', '全国', '', '', '', '');
 
-  SET @totalDeadCount=(SELECT SUM(`deadCount`) FROM `detailCount`);
-  SET @totalCuredCount=(SELECT SUM(`curedCount`) FROM `detailCount`);
-  SET @totalConfirmedCount=(SELECT SUM(`confirmedCount`) FROM `detailCount`);
-  SET @totalCurrentConfirmedCount=(SELECT SUM(`currentConfirmedCount`) FROM `detailCount`);
+  SET @totalDeadCount=(SELECT SUM(dead_count) FROM (SELECT dead_count FROM `detailCount` ORDER BY `date` DESC LIMIT 34) AS temp);
+  SET @totalCuredCount=(SELECT SUM(cured_count) FROM (SELECT cured_count FROM `detailCount` ORDER BY `date` DESC LIMIT 34) AS temp);
+  SET @totalConfirmedCount=(SELECT SUM(confirmed_count) FROM (SELECT confirmed_count FROM `detailCount` ORDER BY `date` DESC LIMIT 34) AS temp);
+  SET @totalCurrentConfirmedCount=(SELECT SUM(current_confirmed_count) FROM (SELECT current_confirmed_count FROM `detailCount` ORDER BY `date` DESC LIMIT 34) AS temp);
 
   UPDATE 
     `detailCount` 
   SET 
-    `deadCount` = @totalDeadCount, 
-    `curedCount` = @totalCuredCount, 
-    `confirmedCount` = @totalConfirmedCount, 
-    `currentConfirmedCount` = @totalCurrentConfirmedCount 
-  WHERE  `provinceName` = '全国';
+    `dead_count` = @totalDeadCount, 
+    `cured_count` = @totalCuredCount, 
+    `confirmed_count` = @totalConfirmedCount, 
+    `current_confirmed_count` = @totalCurrentConfirmedCount 
+  WHERE  `province_name` = '全国';
+    
+    END@@
+DELIMITER ;
 
   -- 全国疫情
-  SELECT `provincename`          AS '省份', 
-         `currentconfirmedcount` AS '近期确诊', 
-         `confirmedcount`        AS '总计确诊', 
-         `deadcount`             AS '总计死亡', 
-         `curedcount`            AS '总计治愈' 
+  SELECT `province_name`          AS '省份', 
+         `current_confirmed_count` AS '近期确诊', 
+         `confirmed_count`        AS '总计确诊', 
+         `dead_count`             AS '总计死亡', 
+         `cured_count`            AS '总计治愈' 
   FROM   `detailcount` 
-  WHERE  `provincename` = '全国'; 
+  WHERE  `province_name` = '全国'; 
 
   -- 确诊最多 
-  SELECT `provincename`          AS '确诊最多', 
-         `currentconfirmedcount` AS '近期确诊', 
-         `confirmedcount`        AS '总计确诊', 
-         `deadcount`             AS '总计死亡', 
-         `curedcount`            AS '总计治愈' 
+  SELECT `province_name`          AS '确诊最多', 
+         `current_confirmed_count` AS '近期确诊', 
+         `confirmed_count`        AS '总计确诊', 
+         `dead_count`             AS '总计死亡', 
+         `cured_count`            AS '总计治愈' 
   FROM   `detailcount` 
-  WHERE  `confirmedcount` = (SELECT MAX(`confirmedcount`) 
-                           FROM   (SELECT `confirmedcount`
+  WHERE  `confirmed_count` = (SELECT MAX(`confirmed_count`) 
+                           FROM   (SELECT `confirmed_count`
                                    FROM   `detailcount` 
                                    ORDER  BY `date` DESC 
                                    LIMIT  34) AS temp) 
   LIMIT  1; 
 
   -- 确诊最少 
-  SELECT `provincename`          AS '确诊最少', 
-         `currentconfirmedcount` AS '近期确诊', 
-         `confirmedcount`        AS '总计确诊', 
-         `deadcount`             AS '总计死亡', 
-         `curedcount`            AS '总计治愈' 
+  SELECT `province_name`          AS '确诊最少', 
+         `current_confirmed_count` AS '近期确诊', 
+         `confirmed_count`        AS '总计确诊', 
+         `dead_count`             AS '总计死亡', 
+         `cured_count`            AS '总计治愈' 
   FROM   `detailcount` 
-  WHERE  `confirmedcount` = (SELECT MIN(`confirmedcount`) 
-                           FROM   (SELECT `confirmedcount`
+  WHERE  `confirmed_count` = (SELECT MIN(`confirmed_count`) 
+                           FROM   (SELECT `confirmed_count`
                                    FROM   `detailcount` 
                                    ORDER  BY `date` DESC 
                                    LIMIT  34) AS temp) 
@@ -75,19 +80,19 @@ BEGIN
 
   -- 福建省近10天疫情情况
   SELECT `date`                  AS '日期', 
-         `provincename`          AS '省份', 
-         `currentconfirmedcount` AS '近期确诊', 
-         `confirmedcount`        AS '总计确诊', 
-         `deadcount`             AS '总计死亡', 
-         `curedcount`            AS '总计治愈' 
+         `province_name`          AS '省份', 
+         `current_confirmed_count` AS '近期确诊', 
+         `confirmed_count`        AS '总计确诊', 
+         `dead_count`             AS '总计死亡', 
+         `cured_count`            AS '总计治愈' 
   FROM   `detailcount` 
-  WHERE  `provincename` = '福建省' 
+  WHERE  `province_name` = '福建省' 
   LIMIT  10;
 END@@
 
 DELIMITER ;
 
-INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-01', '香港', 261858, 330670, 9308, 59504),
 ('2022-05-01', '台湾', 118388, 132995, 865, 13742),
 ('2022-05-01', '上海市', 20265, 58341, 429, 37647),
@@ -123,7 +128,7 @@ INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confi
 ('2022-05-01', '澳门', 0, 82, 0, 82),
 ('2022-05-01', '西藏自治区', 0, 1, 0, 1);
 
-INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-02', '香港', 261751, 330725, 9313, 59661),
 ('2022-05-02', '台湾', 136198, 150808, 868, 13742),
 ('2022-05-02', '上海市', 16716, 59070, 461, 41893),
@@ -159,7 +164,7 @@ INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confi
 ('2022-05-02', '澳门', 0, 82, 0, 82),
 ('2022-05-02', '西藏自治区', 0, 1, 0, 1);
 
-INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-03', '香港', 261716, 330773, 9318, 59739),
 ('2022-05-03', '台湾', 159324, 173942, 876, 13742),
 ('2022-05-03', '上海市', 12988, 59344, 481, 45875),
@@ -195,7 +200,7 @@ INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confi
 ('2022-05-03', '澳门', 0, 82, 0, 82),
 ('2022-05-03', '西藏自治区', 0, 1, 0, 1);
 
-INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-04', '香港', 261741, 330880, 9325, 59814),
 ('2022-05-04', '台湾', 187795, 202418, 881, 13742),
 ('2022-05-04', '上海市', 11366, 59607, 497, 47744),
@@ -231,7 +236,7 @@ INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confi
 ('2022-05-04', '澳门', 0, 82, 0, 82),
 ('2022-05-04', '西藏自治区', 0, 1, 0, 1);
 
-INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-05', '香港', 261678, 330982, 9328, 59976),
 ('2022-05-05', '台湾', 217774, 232402, 886, 13742),
 ('2022-05-05', '上海市', 9877, 59870, 510, 49483),
@@ -267,7 +272,7 @@ INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confi
 ('2022-05-05', '澳门', 0, 82, 0, 82),
 ('2022-05-05', '西藏自治区', 0, 1, 0, 1);
 
-INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-06', '香港', 261645, 331097, 9333, 60119),
 ('2022-05-06', '台湾', 253931, 268569, 896, 13742),
 ('2022-05-06', '上海市', 8720, 60115, 522, 50873),
@@ -303,7 +308,7 @@ INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confi
 ('2022-05-06', '澳门', 0, 82, 0, 82),
 ('2022-05-06', '西藏自治区', 0, 1, 0, 1);
 
-INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-07', '台湾', 300334, 314983, 907, 13742),
 ('2022-05-07', '香港', 261514, 331181, 9344, 60323),
 ('2022-05-07', '上海市', 7296, 60368, 535, 52537),
@@ -339,7 +344,7 @@ INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confi
 ('2022-05-07', '澳门', 0, 82, 0, 82),
 ('2022-05-07', '西藏自治区', 0, 1, 0, 1);
 
-INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-08', '台湾', 342622, 357271, 907, 13742),
 ('2022-05-08', '香港', 261404, 331231, 9344, 60483),
 ('2022-05-08', '上海市', 6564, 60585, 543, 53478),
@@ -375,7 +380,7 @@ INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confi
 ('2022-05-08', '澳门', 0, 82, 0, 82),
 ('2022-05-08', '西藏自治区', 0, 1, 0, 1);
 
-INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-09', '台湾', 382843, 397504, 919, 13742),
 ('2022-05-09', '香港', 261328, 331274, 9346, 60600),
 ('2022-05-09', '上海市', 6232, 60909, 554, 54123),
@@ -411,7 +416,7 @@ INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confi
 ('2022-05-09', '澳门', 0, 82, 0, 82),
 ('2022-05-09', '西藏自治区', 0, 1, 0, 1);
 
-INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-10', '台湾', 433638, 448323, 943, 13742),
 ('2022-05-10', '香港', 261323, 331306, 9347, 60636),
 ('2022-05-10', '上海市', 5613, 61143, 560, 54970),
@@ -447,7 +452,7 @@ INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confi
 ('2022-05-10', '澳门', 0, 82, 0, 82),
 ('2022-05-10', '西藏自治区', 0, 1, 0, 1);
 
-INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-11', '台湾', 490762, 505455, 951, 13742),
 ('2022-05-11', '香港', 261291, 331361, 9352, 60718),
 ('2022-05-11', '上海市', 5081, 61372, 567, 55724),
@@ -483,7 +488,7 @@ INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confi
 ('2022-05-11', '澳门', 0, 82, 0, 82),
 ('2022-05-11', '西藏自治区', 0, 1, 0, 1);
 
-INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-12', '台湾', 556160, 570870, 968, 13742),
 ('2022-05-12', '香港', 261224, 331420, 9355, 60841),
 ('2022-05-12', '上海市', 4782, 61516, 572, 56162),
@@ -519,7 +524,7 @@ INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confi
 ('2022-05-12', '澳门', 0, 82, 0, 82),
 ('2022-05-12', '西藏自治区', 0, 1, 0, 1);
 
-INSERT IGNORE INTO detailCount (date, provinceName, currentConfirmedCount, confirmedCount, deadCount, curedCount) VALUES
+INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-13', '台湾', 621160, 635870, 968, 13742),
 ('2022-05-13', '香港', 261140, 331468, 9356, 60972),
 ('2022-05-13', '上海市', 4589, 61743, 574, 56580),
