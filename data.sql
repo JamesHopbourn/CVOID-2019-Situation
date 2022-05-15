@@ -20,10 +20,6 @@ DELIMITER @@
 
 CREATE PROCEDURE totalSum()
 BEGIN
-  INSERT IGNORE INTO detailCount (`date`, `province_name`, `current_confirmed_count`, `confirmed_count`, `dead_count`, `cured_count`) 
-  VALUES 
-    ('1970-01-01', '全国', '', '', '', '');
-
   SET @totalDeadCount=(SELECT SUM(dead_count) FROM (SELECT dead_count FROM `detailCount` ORDER BY `date` DESC LIMIT 34) AS temp);
   SET @totalCuredCount=(SELECT SUM(cured_count) FROM (SELECT cured_count FROM `detailCount` ORDER BY `date` DESC LIMIT 34) AS temp);
   SET @totalConfirmedCount=(SELECT SUM(confirmed_count) FROM (SELECT confirmed_count FROM `detailCount` ORDER BY `date` DESC LIMIT 34) AS temp);
@@ -38,9 +34,6 @@ BEGIN
     `current_confirmed_count` = @totalCurrentConfirmedCount 
   WHERE  `province_name` = '全国';
     
-    END@@
-DELIMITER ;
-
   -- 全国疫情
   SELECT `province_name`          AS '省份', 
          `current_confirmed_count` AS '近期确诊', 
@@ -87,10 +80,15 @@ DELIMITER ;
          `cured_count`            AS '总计治愈' 
   FROM   `detailcount` 
   WHERE  `province_name` = '福建省' 
+  ORDER BY `date` DESC
   LIMIT  10;
 END@@
 
 DELIMITER ;
+
+INSERT IGNORE INTO detailCount (`id`, `date`, `province_name`, `current_confirmed_count`, `confirmed_count`, `dead_count`, `cured_count`) 
+VALUES 
+(0, '1970-01-01', '全国', '', '', '', '');
 
 INSERT IGNORE INTO detailCount (date, province_name, current_confirmed_count, confirmed_count, dead_count, cured_count) VALUES
 ('2022-05-01', '香港', 261858, 330670, 9308, 59504),
