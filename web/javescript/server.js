@@ -1,7 +1,6 @@
 var oinput = document.getElementById("input");
 
 window.onload = function () {
-
     var btn_today = document.getElementById("btn_today");
     var btn_count = document.getElementById("btn_count");
     var btn_dead = document.getElementById("btn_dead");
@@ -51,8 +50,6 @@ window.onload = function () {
         $("#table_2").append(html.join(""));
     }
 
-
-
     //展示全国数据
     $.ajax({
         method: "GET",
@@ -96,7 +93,6 @@ window.onload = function () {
         method: "GET",
         url: "http://localhost:8089/api/today",
         success: function (result) {
-
             Print_DESC(result)//降序打印表格
             var list = result['data'];
             var len = list.length;
@@ -119,7 +115,6 @@ window.onload = function () {
             html_min.push("<td>" + list[len - 1]["deadCount"] + "</td>");
             html_min.push("<td>" + list[len - 1]["curedCount"] + "</td>");
             $("#tbody_min").append(html_min.join(""));
-
         },
         error: function () {
             alert("似乎出了些问题，请稍后再试")
@@ -132,18 +127,12 @@ window.onload = function () {
             method: "GET",
             url: "http://localhost:8089/api/today",
             success: function (result) {
-
                 Delete();//清空表格
-
                 if (count_today == "DESC") {//首次点击降序输出
-
                     Print_DESC(result)//降序打印表格
-
                     count_today = "ASC";
                 } else {//再次点击升序输出
-
                     Print_ASC(result)//升序打印表格
-
                     count_today = "DESC";
                 }
             },
@@ -159,18 +148,12 @@ window.onload = function () {
             method: "GET",
             url: "http://localhost:8089/api/count",
             success: function (result) {
-
                 Delete();//清空表格
-
                 if (count_today == "DESC") {//首次点击降序输出
-
                     Print_DESC(result)//降序打印表格
-
                     count_today = "ASC";
                 } else {//再次点击升序输出
-
                     Print_ASC(result)//升序打印表格
-
                     count_today = "DESC";
                 }
             },
@@ -186,21 +169,13 @@ window.onload = function () {
             method: "GET",
             url: "http://localhost:8089/api/dead",
             success: function (result) {
-
                 Delete();//清空表格
-
                 if (count_dead == "DESC") {//首次点击降序输出
-
                     Print_DESC(result)//降序打印表格
-
                     count_dead = "ASC";
-
                 } else {//再次点击升序输出
-
                     Print_ASC(result)//升序打印表格
-
                     count_dead = "DESC";
-
                 }
             },
             error: function () {
@@ -215,22 +190,13 @@ window.onload = function () {
             method: "GET",
             url: "http://localhost:8089/api/cured",
             success: function (result) {
-
                 Delete();//清空表格
-
                 if (count_cured == "DESC") {//首次点击降序输出
-
                     Print_DESC(result)//降序打印表格
-
                     count_cured = "ASC";
-
-
                 } else {//再次点击升序输出
-
                     Print_ASC(result)//升序打印表格
-
                     count_cured = "DESC";
-
                 }
             },
             error: function () {

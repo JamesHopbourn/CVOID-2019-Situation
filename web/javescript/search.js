@@ -1,6 +1,5 @@
 window.onload = function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    var name = urlParams.get('name');
+    const name = new URLSearchParams(window.location.search).get('name');
     var btn_up = document.getElementById("btn_up");
     var btn_down = document.getElementById("btn_down");
     var page_num = 1;
@@ -40,7 +39,6 @@ window.onload = function () {
         success: function (result) {
             total = Math.ceil(result['data']['total'] / 10);;
             Print_search(result);
-
         },
         error: function () {
             alert("似乎出了些问题，请稍后再试")
@@ -50,15 +48,13 @@ window.onload = function () {
     //跳转上一页
     btn_up.onclick = function () {
         if (page_num > 1) {
-            page_num = page_num - 1;
+            page_num--;
             $.ajax({
                 method: "GET",
                 url: "http://localhost:8089/api/province?page=" + page_num + "&pageSize=10&name=" + name,
                 success: function (result) {
-
                     Delete()//清空
                     Print_search(result);//打印
-
                 },
                 error: function () {
                     alert("似乎出了些问题，请稍后再试")
@@ -72,15 +68,13 @@ window.onload = function () {
     //跳转下一页
     btn_down.onclick = function () {
         if (page_num < total) {
-            page_num = page_num + 1;
+            page_num++;
             $.ajax({
                 method: "GET",
                 url: "http://localhost:8089/api/province?page=" + page_num + "&pageSize=10&name=" + name,
                 success: function (result) {
-
                     Delete()//清空
                     Print_search(result);//打印
-
                 },
                 error: function () {
                     alert("似乎出了些问题，请稍后再试")
@@ -89,7 +83,6 @@ window.onload = function () {
         } else {
             alert("没有下一页了")
         }
-
     }
 
     //监听回车按键，按下后搜索
