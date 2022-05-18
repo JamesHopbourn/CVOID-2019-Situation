@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,40 +10,42 @@
     <script type="text/javascript" src="javescript/jquery.js"></script>
     <script type="text/javascript" src="javescript/server.js"></script>
     <script type="text/javascript">
-        function searchProvice(){
+        function searchProvice() {
             var name = document.getElementById("input").value
-            if(name!=""){
-                window.location.href='./search.html?name=' + name
-            }else{
+            if (name != "") {
+                window.location.href = './search.html?name=' + name
+            } else {
                 alert("输入不能为空！")
             }
         }
     </script>
 
 </head>
+
 <body>
     <div>
         <ul>
-            <li><a class="a1"  href="index.html">首页</a></li>
-            <li><a class="a2"  href="knowledge.html">防疫科学小知识</a></li>
-            <li><a class="a3"  href="notice.html">疫苗接种注意事项</a></li>
-            <li style="float:right" ><input class="input" id="input"><button class="btn" onclick=searchProvice() id="btn_search">搜索</button></li>
+            <li><a class="a1" href="index.html">首页</a></li>
+            <li><a class="a2" href="knowledge.html">防疫科学小知识</a></li>
+            <li><a class="a3" href="notice.html">疫苗接种注意事项</a></li>
+            <li style="float:right"><input class="input" id="input"><button class="btn" onclick=searchProvice()
+                    id="btn_search">搜索</button></li>
         </ul>
     </div>
-    <div class="d1" >
-        <header class="head" >
+    <div class="d1">
+        <header class="head">
             <h3 class="h3" data-text="新型冠状病毒肺炎">
-              
+
             </h3>
             <h1 class="h1" data-text="疫情实时大数据报告">
-               
+
             </h1>
         </header>
     </div>
-    
-    <section class="sec">  
+
+    <section class="sec">
         <div class="d2">
-            <table id="table_search"  align="center"> 
+            <table id="table_search" align="center">
                 <caption id="table_title">全国疫情数据总览</caption>
                 <!-- 表头 -->
                 <thead>
@@ -62,8 +65,8 @@
                 </tbody>
             </table>
         </div>
-        <div class="d3" >
-            <table id="table_2"  align="center">
+        <div class="d3">
+            <table id="table_2" align="center">
                 <caption id="table_title">各省今日疫情数据</caption>
                 <thead>
                     <tr>
@@ -77,6 +80,7 @@
                 <tbody id="tbody_2"></tbody>
             </table>
         </div>
-    </section>    
+    </section>
 </body>
+
 </html>
