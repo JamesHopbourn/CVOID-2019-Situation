@@ -1,299 +1,288 @@
 /* 头部 */
 ul {
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-    overflow: hidden;
-    background-color: #333;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #333;
 }
 
 li {
-    float: left;
+  float: left;
 }
 
 li .a1 {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 20px 50px;
-    text-decoration: none;
-    background-color: #4CAF50;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 50px;
+  text-decoration: none;
+  background-color: #4caf50;
 }
 
 li .a2 {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 20px 50px;
-    text-decoration: none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 50px;
+  text-decoration: none;
 }
 
 li .a3 {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 20px 50px;
-    text-decoration: none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 50px;
+  text-decoration: none;
 }
 
 li a:hover {
-    background-color: rgb(48, 93, 217);
+  background-color: rgb(48, 93, 217);
 }
 
 .btn {
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #18b6e6;
-    border: none;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    height: 32px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #18b6e6;
+  border: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  height: 32px;
 }
 
 .input {
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border: 3px solid #333;
-    height: 30px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border: 3px solid #333;
+  height: 30px;
 }
 
 /* 第一个表格 */
 #table_1 {
-
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    /* margin: 20px; */
-    width: 100%;
-    border-collapse: collapse;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  /* margin: 20px; */
+  width: 100%;
+  border-collapse: collapse;
 }
 
 #table_1 td,
 #table_1 th {
-    font-size: 1em;
-    padding: 3px 7px 2px 7px;
+  font-size: 1em;
+  padding: 3px 7px 2px 7px;
 }
 
 #table_1 th {
-    font-size: 1.1em;
-    text-align: center;
-    padding-top: 5px;
-    padding-bottom: 4px;
-    background-color: #333;
-    color: #ffffff;
+  font-size: 1.1em;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 4px;
+  background-color: #333;
+  color: #ffffff;
 }
 
 #table_1 tr.alt td {
-    color: #000000;
-    background-color: #ffffff;
+  color: #000000;
+  background-color: #ffffff;
 }
 
 #tbody_1 {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 /* table2 */
 #table_2 {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #ffffff;
-    font-size: 13px;
-    margin-top: 20px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  font-size: 13px;
+  margin-top: 20px;
 }
-
-
 
 #table_2 td,
 th {
-    padding: 10px;
-    border-bottom: 0.5px solid #dedede;
-    /* 表格横线 */
-    border-top: 0.5px solid #dedede;
-    text-align: center;
-
+  padding: 10px;
+  border-bottom: 0.5px solid #dedede;
+  /* 表格横线 */
+  border-top: 0.5px solid #dedede;
+  text-align: center;
 }
 
 #table_1 td,
 th {
-    padding: 10px;
-    border-bottom: 0.5px solid #dedede;
-    /* 表格横线 */
-    border-top: 0.5px solid #dedede;
-    text-align: center;
+  padding: 10px;
+  border-bottom: 0.5px solid #dedede;
+  /* 表格横线 */
+  border-top: 0.5px solid #dedede;
+  text-align: center;
 }
-
-
-
 
 body {
-    background-image: linear-gradient(to top , #7AFFAF, #10aeb5);
-    margin: 0;
-
+  background-image: linear-gradient(to top, #7affaf, #10aeb5);
+  margin: 0;
 }
 
-
 .d1 {
-    width: 2000px;
-    height: 200px;
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
+  width: 2000px;
+  height: 200px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .d1 img {
-    width: 55%;
-    height: 190px;
-    text-align: center;
-
+  width: 55%;
+  height: 190px;
+  text-align: center;
 }
 
-.sec{
-    background-color: #fff;
-    position: relative;
-    border-radius: .625rem;
-    margin-left: 22.5%;
-    margin-right: 22.5%;
-    padding: .917rem 1.0625rem 1.875rem;
+.sec {
+  background-color: #fff;
+  position: relative;
+  border-radius: 0.625rem;
+  margin-left: 22.5%;
+  margin-right: 22.5%;
+  padding: 0.917rem 1.0625rem 1.875rem;
 }
 
 .btn_2 {
-    background: #10aeb5;
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
-    border-radius: 15px;
-    font-family: Arial;
-    color: white;
-    font-size: 10px;
-    padding: 8px 8px 8px 8px;
-    text-decoration: none;
-    border: 1px solid #10aeb5;
+  background: #10aeb5;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 15px;
+  font-family: Arial;
+  color: white;
+  font-size: 10px;
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  border: 1px solid #10aeb5;
 }
 
 .btn_2:hover {
-    background: #93a5b1;
+  background: #93a5b1;
 
-    background-image: linear-gradient(to bottom, #549ea2, #549ea2);
-    text-decoration: none;
+  background-image: linear-gradient(to bottom, #549ea2, #549ea2);
+  text-decoration: none;
 }
 
 .head {
-    background-image: url(/image/background.png);
-    background-size: 830px 210px;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    height: 220px;
-    min-width: 830px;
-    margin-left: 250px;
-    margin-right: 250px;
+  background-image: url(/image/background.png);
+  background-size: 830px 210px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 220px;
+  min-width: 830px;
+  margin-left: 250px;
+  margin-right: 250px;
 }
 
 .h1[data-text]:after {
-    content: attr(data-text);
-    display: block;
-    position: absolute;
-    color: #afdade;
-    top: 0;
-    margin-top: 220px;
-    padding-left: 110px;
+  content: attr(data-text);
+  display: block;
+  position: absolute;
+  color: #afdade;
+  top: 0;
+  margin-top: 220px;
+  padding-left: 110px;
 }
 
 .h3[data-text]:after {
-    content: attr(data-text);
-    display: block;
-    position: absolute;
-    color: #afdade;
-    top: 0;
-    margin-top: 175px;
-    padding-left: 125px;
+  content: attr(data-text);
+  display: block;
+  position: absolute;
+  color: #afdade;
+  top: 0;
+  margin-top: 175px;
+  padding-left: 125px;
 }
 
 #td_province,
 .columnColor {
-    color: #10aeb5;
-    border: 2px;
-    font-weight: 700;
-
+  color: #10aeb5;
+  border: 2px;
+  font-weight: 700;
 }
 
 /* table_serch */
 #table_search {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #ffffff;
-    font-size: 13px;
-    margin-top: 10px;
-    margin-bottom: 30px;
-
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  font-size: 13px;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 #table_search td,
 th {
-    padding: 10px;
-    border-bottom: 0.5px solid #dedede;
-    /* 表格横线 */
-    border-top: 0.5px solid #dedede;
-    text-align: center;
-
+  padding: 10px;
+  border-bottom: 0.5px solid #dedede;
+  /* 表格横线 */
+  border-top: 0.5px solid #dedede;
+  text-align: center;
 }
 
 .d_search {
-    margin: 50px;
+  margin: 50px;
 }
 
 /* 下一页 */
 #btn_up {
-    text-align: center;
-    margin-left: 710px;
-    background: #38e0cc;
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
-    border-radius: 15px;
-    font-family: Arial;
-    color: white;
-    font-size: 10px;
-    padding: 8px 8px 8px 8px;
-    text-decoration: none;
-    border: 1px solid #38e0cc;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    cursor: pointer;
+  text-align: center;
+  margin-left: 710px;
+  background: #38e0cc;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 15px;
+  font-family: Arial;
+  color: white;
+  font-size: 10px;
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  border: 1px solid #38e0cc;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
 }
 
 /* 上一页 */
 #btn_down {
-    background: #38e0cc;
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
-    border-radius: 30px;
-    font-family: Arial;
-    color: white;
-    font-size: 10px;
-    padding: 8px 8px 8px 8px;
-    text-decoration: none;
-    border: 1px solid #38e0cc;
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    cursor: pointer;
+  background: #38e0cc;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 30px;
+  font-family: Arial;
+  color: white;
+  font-size: 10px;
+  padding: 8px 8px 8px 8px;
+  text-decoration: none;
+  border: 1px solid #38e0cc;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
 }
 
 .data {
-    color: #10aeb5;
-    border: 2px;
-    font-weight: 700;
+  color: #10aeb5;
+  border: 2px;
+  font-weight: 700;
 }
 
 #province_name {
-    color: #10aeb5;
-    margin-bottom: 30px;
-    font-weight: 700;
-    font-size: 25px;
+  color: #10aeb5;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 25px;
 }
 
 #table_title {
-    color: #10aeb5;
-    font-weight: 700;
-    font-size: 25px;
-    margin-bottom: 10px;
+  color: #10aeb5;
+  font-weight: 700;
+  font-size: 25px;
+  margin-bottom: 10px;
 }
