@@ -1,7 +1,6 @@
 package com.yutty.cvoid2019situation.config;
 
 
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -18,9 +17,9 @@ import java.util.List;
 public class WebMvcConfig extends WebMvcConfigurationSupport {
 
 
-
     /**
      * 解决跨域问题
+     *
      * @param registry
      */
     @Override
