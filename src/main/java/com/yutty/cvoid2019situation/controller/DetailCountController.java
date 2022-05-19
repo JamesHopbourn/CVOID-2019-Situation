@@ -1,6 +1,9 @@
 package com.yutty.cvoid2019situation.controller;
 
+import com.alibaba.druid.util.StringUtils;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 import com.yutty.cvoid2019situation.common.R;
@@ -9,8 +12,11 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -76,6 +82,9 @@ public class DetailCountController {
 
     }
 
+
+
+        //http://localhost:8089/api/province?page=1&pageSize=5&name=福建
     /**
      * 省内疫情数据分页查询
      * @param page
@@ -83,16 +92,23 @@ public class DetailCountController {
      * @param name
      * @return
      */
-        //http://localhost:8089/api/province?page=1&pageSize=10&name=福建
     @GetMapping("/province")
-    public R<Page> getByName(int page,int pageSize,String name){
-        //构建查询条件，根据name查询,并根据id降序排序
-        LambdaQueryWrapper<Detailcount> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.like(name!=null,Detailcount::getProvinceName,name);
-        queryWrapper.orderByDesc(Detailcount::getId);
+    public R<Page> getByName(int page, int pageSize,String name){
 
+        log.info("page = {},pageSize = {},name = {}" ,page,pageSize,name);
+
+        //构建查询条件，根据name查询,并根据date降序排序
+        LambdaQueryWrapper<Detailcount> queryWrapper = new LambdaQueryWrapper();
+        queryWrapper.like(!StringUtils.isEmpty(name),Detailcount::getProvinceName,name);
+
+        queryWrapper.orderByDesc(Detailcount::getDate);
         Page<Detailcount> pageInfo = new Page<>(page,pageSize);
+
         return R.success(detailCountService.page(pageInfo,queryWrapper));
     }
+
+
+
+
 
 }

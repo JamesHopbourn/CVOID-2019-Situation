@@ -15,7 +15,7 @@ public class Detailcount implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
     private Date date;
 
     private String provinceName;
