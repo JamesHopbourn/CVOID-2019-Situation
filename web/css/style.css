@@ -261,7 +261,7 @@ th {
   font-size: 25px;
 }
 
-#table_title {
+.table_title {
   color: #10aeb5;
   font-weight: 700;
   font-size: 25px;
@@ -276,11 +276,13 @@ th {
   font-size: 15px;
   letter-spacing: 1px;
 }
+
 .link{
   text-decoration: none;
   color: #10aeb5;
   font-size: 13px;
 }
+
 .rightBar{
   float: right;
 }
