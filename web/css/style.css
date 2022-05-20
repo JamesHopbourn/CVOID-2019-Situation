@@ -281,3 +281,6 @@ th {
   color: #10aeb5;
   font-size: 13px;
 }
+.rightBar{
+  float: right;
+}
