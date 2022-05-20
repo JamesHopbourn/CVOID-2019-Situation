@@ -8,16 +8,6 @@
     <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="javescript/jquery.js"></script>
     <script type="text/javascript" src="javescript/key_listener.js"></script>
-    <script type="text/javascript">
-        function searchProvice(){
-            var name = document.getElementById("input").value
-            if(name!=""){
-                window.location.href='./search.html?name=' + name
-            }else{
-                alert("输入不能为空！")
-            }
-        }
-    </script>
 </head>
 <body>
 
@@ -26,7 +16,6 @@
             <li><a class="a1"  href="index.html">首页</a></li>
             <li><a class="a2"  href="knowledge.html">防疫科学小知识</a></li>
             <li><a class="a3"  href="notice.html">疫苗接种注意事项</a></li>
-            <li style="float:right" ><input class="input" id="input"><button class="btn" onclick=searchProvice() id="btn_search">搜索</button></li>
         </ul>
     </div>
 
