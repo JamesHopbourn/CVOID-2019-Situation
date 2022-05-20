@@ -1,15 +1,13 @@
-var oinput = document.getElementById("input");
-
 window.onload = function () {
     var btn_today = document.getElementById("btn_today");
     var btn_count = document.getElementById("btn_count");
     var btn_dead = document.getElementById("btn_dead");
     var btn_cured = document.getElementById("btn_cured");
     var table_body = document.getElementById("tbody_2");
-    var count_today = "ASC";
-    var count_count = "DESC";
-    var count_dead = "DESC";
-    var count_cured = "DESC";
+    var count_today = "ASC";//近期确诊，默认降序
+    var count_count = "DESC";//确诊总数
+    var count_dead = "DESC";//死亡总数
+    var count_cured = "DESC";//治愈总数
 
     //清空表格
     function Delete() {
@@ -150,12 +148,12 @@ window.onload = function () {
             url: "http://localhost:8089/api/count",
             success: function (result) {
                 Delete();//清空表格
-                if (count_today == "DESC") {//首次点击降序输出
+                if (count_count == "DESC") {//首次点击降序输出
                     Print_DESC(result)//降序打印表格
-                    count_today = "ASC";
+                    count_count = "ASC";
                 } else {//再次点击升序输出
                     Print_ASC(result)//升序打印表格
-                    count_today = "DESC";
+                    count_count = "DESC";
                 }
             },
             error: function () {
