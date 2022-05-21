@@ -52,7 +52,7 @@ window.onload = function () {
             page_num--;
             $.ajax({
                 method: "GET",
-                url: "/api/province?page=" + page_num + "&pageSize=10&name=" + name,
+                url: "/api/province?page=${page_num}&pageSize=10&name=${name}",
                 success: function (result) {
                     Delete()//清空
                     Print_search(result);//打印
@@ -72,7 +72,7 @@ window.onload = function () {
             page_num++;
             $.ajax({
                 method: "GET",
-                url: "/api/province?page=" + page_num + "&pageSize=10&name=" + name,
+                url: "/api/province?page=${page_num}&pageSize=10&name=${name}",
                 success: function (result) {
                     Delete()//清空
                     Print_search(result);//打印
