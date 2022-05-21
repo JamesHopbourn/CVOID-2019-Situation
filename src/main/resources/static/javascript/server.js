@@ -24,7 +24,7 @@ window.onload = function () {
         var len = list.length;
         var html = [];
         for (var i = 0; i < len; i++) {
-            var link = `http://${location.host}/search.html?name=${list[i]["provinceName"]}`
+            var link = `/search.html?name=${list[i]["provinceName"]}`
             html.push(`<tr><td id='td_province'><a href='${link}' class="link">` + list[i]["provinceName"] + "</a></td>");
             html.push("<td>" + list[i]["currentConfirmedCount"] + "</td>");
             html.push("<td>" + list[i]["confirmedCount"] + "</td>");
@@ -40,7 +40,8 @@ window.onload = function () {
         var len = list.length;
         var html = [];
         for (var i = len - 1; i >= 0; i--) {
-            html.push("<tr><td id='td_province'>" + list[i]["provinceName"] + "</td>");
+            var link = `/search.html?name=${list[i]["provinceName"]}`
+            html.push(`<tr><td id='td_province'><a href='${link}' class="link">` + list[i]["provinceName"] + "</a></td>");
             html.push("<td>" + list[i]["currentConfirmedCount"] + "</td>");
             html.push("<td>" + list[i]["confirmedCount"] + "</td>");
             html.push("<td>" + list[i]["deadCount"] + "</td>");
@@ -52,7 +53,7 @@ window.onload = function () {
     //展示全国数据
     $.ajax({
         method: "GET",
-        url: "http://localhost:8089/api/province?page=1&pageSize=10&name=全国",
+        url: "/api/province?page=1&pageSize=10&name=全国",
         success: function (result) {
             var list = result['data']['records'][0];
             var html = [];
@@ -71,7 +72,7 @@ window.onload = function () {
     //展示福建省数据
     $.ajax({
         method: "GET",
-        url: "http://localhost:8089/api/province?page=1&pageSize=10&name=福建省",
+        url: "/api/province?page=1&pageSize=10&name=福建省",
         success: function (result) {
             var list = result['data']['records'][0];
             var html = [];
@@ -90,7 +91,7 @@ window.onload = function () {
     //载入页面后显示表格
     $.ajax({
         method: "GET",
-        url: "http://localhost:8089/api/today",
+        url: "/api/today",
         success: function (result) {
             Print_DESC(result)//降序打印表格
             var list = result['data'];
@@ -124,7 +125,7 @@ window.onload = function () {
     btn_today.onclick = function () {
         $.ajax({
             method: "GET",
-            url: "http://localhost:8089/api/today",
+            url: "/api/today",
             success: function (result) {
                 Delete();//清空表格
                 if (count_today == "DESC") {//首次点击降序输出
@@ -145,7 +146,7 @@ window.onload = function () {
     btn_count.onclick = function () {
         $.ajax({
             method: "GET",
-            url: "http://localhost:8089/api/count",
+            url: "/api/count",
             success: function (result) {
                 Delete();//清空表格
                 if (count_count == "DESC") {//首次点击降序输出
@@ -166,7 +167,7 @@ window.onload = function () {
     btn_dead.onclick = function () {
         $.ajax({
             method: "GET",
-            url: "http://localhost:8089/api/dead",
+            url: "/api/dead",
             success: function (result) {
                 Delete();//清空表格
                 if (count_dead == "DESC") {//首次点击降序输出
@@ -187,7 +188,7 @@ window.onload = function () {
     btn_cured.onclick = function () {
         $.ajax({
             method: "GET",
-            url: "http://localhost:8089/api/cured",
+            url: "/api/cured",
             success: function (result) {
                 Delete();//清空表格
                 if (count_cured == "DESC") {//首次点击降序输出

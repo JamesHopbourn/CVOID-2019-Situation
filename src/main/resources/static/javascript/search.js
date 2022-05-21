@@ -35,7 +35,7 @@ window.onload = function () {
     //加载完成后显示表格
     $.ajax({
         method: "GET",
-        url: "http://localhost:8089/api/province?page=1&pageSize=10&name=" + name,
+        url: "/api/province?page=1&pageSize=10&name=" + name,
         async: false,
         success: function (result) {
             total = Math.ceil(result['data']['total'] / 10);;
@@ -52,7 +52,7 @@ window.onload = function () {
             page_num--;
             $.ajax({
                 method: "GET",
-                url: "http://localhost:8089/api/province?page=" + page_num + "&pageSize=10&name=" + name,
+                url: "/api/province?page=" + page_num + "&pageSize=10&name=" + name,
                 success: function (result) {
                     Delete()//清空
                     Print_search(result);//打印
@@ -72,7 +72,7 @@ window.onload = function () {
             page_num++;
             $.ajax({
                 method: "GET",
-                url: "http://localhost:8089/api/province?page=" + page_num + "&pageSize=10&name=" + name,
+                url: "/api/province?page=" + page_num + "&pageSize=10&name=" + name,
                 success: function (result) {
                     Delete()//清空
                     Print_search(result);//打印
