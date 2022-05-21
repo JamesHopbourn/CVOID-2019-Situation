@@ -8,30 +8,6 @@ window.onload = function () {
     document.title = name + "历史疫情数据";
     $("#province_name").append(name+"历史疫情数据");
 
-    //清空表格
-    function Delete() {
-        if (tbody_search !== "undefined") {
-            while (tbody_search.hasChildNodes()) {
-                tbody_search.removeChild(tbody_search.lastChild)
-            }
-        }
-    }
-
-    //打印表格
-    function Print_search(result) {
-        var list = result['data']['records'];
-        var len = list.length;
-        var html = [];
-        for (var i = 0; i < len; i++) {
-            html.push("<tr><td class='data'>" + list[i]["date"] + "</td>");
-            html.push("<td>" + list[i]["currentConfirmedCount"] + "</td>");
-            html.push("<td>" + list[i]["confirmedCount"] + "</td>");
-            html.push("<td>" + list[i]["deadCount"] + "</td>");
-            html.push("<td>" + list[i]["curedCount"] + "</td></tr>");
-        }
-        $("#tbody_search").append(html.join(""));
-    }
-
     //加载完成后显示表格
     $.ajax({
         method: "GET",

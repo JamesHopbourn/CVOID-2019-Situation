@@ -18,37 +18,6 @@ window.onload = function () {
         }
     }
 
-    //降序打印表格
-    function Print_DESC(result) {
-        var list = result['data'];
-        var len = list.length;
-        var html = [];
-        for (var i = 0; i < len; i++) {
-            var link = `/search.html?name=${list[i]["provinceName"]}`
-            html.push(`<tr><td id='td_province'><a href='${link}' class="link">` + list[i]["provinceName"] + "</a></td>");
-            html.push("<td>" + list[i]["currentConfirmedCount"] + "</td>");
-            html.push("<td>" + list[i]["confirmedCount"] + "</td>");
-            html.push("<td>" + list[i]["deadCount"] + "</td>");
-            html.push("<td>" + list[i]["curedCount"] + "</td></tr>");
-        }
-        $("#table_2").append(html.join(""));
-    }
-
-    //升序打印表格
-    function Print_ASC(result) {
-        var list = result['data'];
-        var html = [];
-        for (var i = list.length - 1; i >= 0; i--) {
-            var link = `/search.html?name=${list[i]["provinceName"]}`
-            html.push(`<tr><td id='td_province'><a href='${link}' class="link">` + list[i]["provinceName"] + "</a></td>");
-            html.push("<td>" + list[i]["currentConfirmedCount"] + "</td>");
-            html.push("<td>" + list[i]["confirmedCount"] + "</td>");
-            html.push("<td>" + list[i]["deadCount"] + "</td>");
-            html.push("<td>" + list[i]["curedCount"] + "</td></tr>");
-        }
-        $("#table_2").append(html.join(""));
-    }
-
     //展示全国数据
     $.ajax({
         method: "GET",
