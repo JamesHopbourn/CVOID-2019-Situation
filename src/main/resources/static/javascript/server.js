@@ -24,7 +24,7 @@ window.onload = function () {
         var len = list.length;
         var html = [];
         for (var i = 0; i < len; i++) {
-            var link = `http://${location.host}/CVOID-2019-Situation/web/search.html?name=${list[i]["provinceName"]}`
+            var link = `http://${location.host}/search.html?name=${list[i]["provinceName"]}`
             html.push(`<tr><td id='td_province'><a href='${link}' class="link">` + list[i]["provinceName"] + "</a></td>");
             html.push("<td>" + list[i]["currentConfirmedCount"] + "</td>");
             html.push("<td>" + list[i]["confirmedCount"] + "</td>");
