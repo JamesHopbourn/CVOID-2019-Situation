@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>搜索</title>
+    <title></title>
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="javascript/header.js"></script>
     <script type="text/javascript" src="javascript/jquery.js"></script>
     <script type="text/javascript" src="javascript/search.js"></script>
     <style>
@@ -15,17 +16,11 @@
     </style>
 </head>
 <body class="b_search">
-    <ul>
-        <li><a class="a1"  href="index.html">首页</a></li>
-        <li class="rightBar"><a class="a2" href="knowledge.html">防疫科学小知识</a></li>
-        <li class="rightBar"><a class="a3" href="notice.html">疫苗接种注意事项</a></li>
-    </ul>
+    <header id="app-header"></header>
     <div class="d_search">
         <section class="sec">
             <table  id="table_2" >
-                <!-- 标题 -->
                 <caption id="province_name"></caption>
-                <!-- 表头 -->
                 <thead>
                     <tr>
                         <th>日期</th>
@@ -38,7 +33,6 @@
                 <tbody id="tbody_search"></tbody>
             </table>
         </section>
-        
     </div>
     <div class="d_btn">
         <button id="btn_up"><a>上一页</a></button>
