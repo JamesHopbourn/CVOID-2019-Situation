@@ -37,27 +37,27 @@ window.onload = function () {
         method: "GET",
         url: `/api/province?page=1&pageSize=10&name=${name}`,
         async: false,
-        success: function (result) {
+        success: (result) => {
             total = Math.ceil(result['data']['total'] / 10);;
             Print_search(result);
         },
-        error: function () {
+        error: () => {
             alert("似乎出了些问题，请稍后再试")
         }
     })
 
     //跳转上一页
-    btn_up.onclick = function () {
+    btn_up.onclick = () => {
         if (page_num > 1) {
             page_num--;
             $.ajax({
                 method: "GET",
                 url: `/api/province?page=${page_num}&pageSize=10&name=${name}`,
-                success: function (result) {
+                success: (result) => {
                     Delete()//清空
                     Print_search(result);//打印
                 },
-                error: function () {
+                error: () => {
                     alert("似乎出了些问题，请稍后再试")
                 }
             })
@@ -67,17 +67,17 @@ window.onload = function () {
     }
 
     //跳转下一页
-    btn_down.onclick = function () {
+    btn_down.onclick = () => {
         if (page_num < total) {
             page_num++;
             $.ajax({
                 method: "GET",
                 url: `/api/province?page=${page_num}&pageSize=10&name=${name}`,
-                success: function (result) {
+                success: (result) => {
                     Delete()//清空
                     Print_search(result);//打印
                 },
-                error: function () {
+                error: () => {
                     alert("似乎出了些问题，请稍后再试")
                 }
             })

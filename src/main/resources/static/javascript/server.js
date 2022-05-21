@@ -37,9 +37,8 @@ window.onload = function () {
     //升序打印表格
     function Print_ASC(result) {
         var list = result['data'];
-        var len = list.length;
         var html = [];
-        for (var i = len - 1; i >= 0; i--) {
+        for (var i = list.length - 1; i >= 0; i--) {
             var link = `/search.html?name=${list[i]["provinceName"]}`
             html.push(`<tr><td id='td_province'><a href='${link}' class="link">` + list[i]["provinceName"] + "</a></td>");
             html.push("<td>" + list[i]["currentConfirmedCount"] + "</td>");
@@ -54,7 +53,7 @@ window.onload = function () {
     $.ajax({
         method: "GET",
         url: "/api/province?page=1&pageSize=10&name=全国",
-        success: function (result) {
+        success: (result) => {
             var list = result['data']['records'][0];
             var html = [];
             html.push("<td class='columnColor'>" + "全国" + "</td>");
@@ -64,7 +63,7 @@ window.onload = function () {
             html.push("<td>" + list["curedCount"] + "</td>");
             $("#tbody_nation").append(html.join(""));
         },
-        error: function () {
+        error: () => {
             alert("似乎出了些问题，请稍后再试")
         }
     })
@@ -73,7 +72,7 @@ window.onload = function () {
     $.ajax({
         method: "GET",
         url: "/api/province?page=1&pageSize=10&name=福建省",
-        success: function (result) {
+        success: (result) => {
             var list = result['data']['records'][0];
             var html = [];
             html.push("<td class='columnColor'>" + "福建省" + "</td>");
@@ -83,7 +82,7 @@ window.onload = function () {
             html.push("<td>" + list["curedCount"] + "</td>");
             $("#tbody_fujian").append(html.join(""));
         },
-        error: function () {
+        error: () => {
             alert("似乎出了些问题，请稍后再试")
         }
     })
@@ -92,7 +91,7 @@ window.onload = function () {
     $.ajax({
         method: "GET",
         url: "/api/today",
-        success: function (result) {
+        success: (result) => {
             Print_DESC(result)//降序打印表格
             var list = result['data'];
             var len = list.length;
@@ -116,17 +115,17 @@ window.onload = function () {
             html_min.push("<td>" + list[len - 1]["curedCount"] + "</td>");
             $("#tbody_min").append(html_min.join(""));
         },
-        error: function () {
+        error: () => {
             alert("似乎出了些问题，请稍后再试")
         }
     })
 
     //根据近期确诊总数降序排序
-    btn_today.onclick = function () {
+    btn_today.onclick = () => {
         $.ajax({
             method: "GET",
             url: "/api/today",
-            success: function (result) {
+            success: (result) => {
                 Delete();//清空表格
                 if (count_today == "DESC") {//首次点击降序输出
                     Print_DESC(result)//降序打印表格
@@ -136,18 +135,18 @@ window.onload = function () {
                     count_today = "DESC";
                 }
             },
-            error: function () {
+            error: () => {
                 alert("似乎出了些问题，请稍后再试")
             }
         })
     }
 
     //根据确诊总数降序排序
-    btn_count.onclick = function () {
+    btn_count.onclick = () => {
         $.ajax({
             method: "GET",
             url: "/api/count",
-            success: function (result) {
+            success: (result) => {
                 Delete();//清空表格
                 if (count_count == "DESC") {//首次点击降序输出
                     Print_DESC(result)//降序打印表格
@@ -157,18 +156,18 @@ window.onload = function () {
                     count_count = "DESC";
                 }
             },
-            error: function () {
+            error: () => {
                 alert("似乎出了些问题，请稍后再试")
             }
         })
     }
 
     //根据死亡总数降序排序
-    btn_dead.onclick = function () {
+    btn_dead.onclick = () => {
         $.ajax({
             method: "GET",
             url: "/api/dead",
-            success: function (result) {
+            success: (result) => {
                 Delete();//清空表格
                 if (count_dead == "DESC") {//首次点击降序输出
                     Print_DESC(result)//降序打印表格
@@ -178,18 +177,18 @@ window.onload = function () {
                     count_dead = "DESC";
                 }
             },
-            error: function () {
+            error: () => {
                 alert("似乎出了些问题，请稍后再试")
             }
         })
     }
 
     //根据近期确诊总数降序排序
-    btn_cured.onclick = function () {
+    btn_cured.onclick = () => {
         $.ajax({
             method: "GET",
             url: "/api/cured",
-            success: function (result) {
+            success: (result) => {
                 Delete();//清空表格
                 if (count_cured == "DESC") {//首次点击降序输出
                     Print_DESC(result)//降序打印表格
@@ -199,7 +198,7 @@ window.onload = function () {
                     count_cured = "DESC";
                 }
             },
-            error: function () {
+            error: () => {
                 alert("似乎出了些问题，请稍后再试")
             }
         })
