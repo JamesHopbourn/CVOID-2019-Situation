@@ -1,9 +1,9 @@
 window.onload = function () {
-    const name = new URLSearchParams(window.location.search).get('name');
+    var total;
+    var page_num = 1;
     var btn_up = document.getElementById("btn_up");
     var btn_down = document.getElementById("btn_down");
-    var page_num = 1;
-    var total;
+    var name = new URLSearchParams(window.location.search).get('name');
 
     document.title = name + "历史疫情数据";
     $("#province_name").append(name+"历史疫情数据");
@@ -35,7 +35,7 @@ window.onload = function () {
     //加载完成后显示表格
     $.ajax({
         method: "GET",
-        url: "/api/province?page=1&pageSize=10&name=" + name,
+        url: `/api/province?page=1&pageSize=10&name=${name}`,
         async: false,
         success: function (result) {
             total = Math.ceil(result['data']['total'] / 10);;
@@ -52,7 +52,7 @@ window.onload = function () {
             page_num--;
             $.ajax({
                 method: "GET",
-                url: "/api/province?page=${page_num}&pageSize=10&name=${name}",
+                url: `/api/province?page=${page_num}&pageSize=10&name=${name}`,
                 success: function (result) {
                     Delete()//清空
                     Print_search(result);//打印
@@ -72,7 +72,7 @@ window.onload = function () {
             page_num++;
             $.ajax({
                 method: "GET",
-                url: "/api/province?page=${page_num}&pageSize=10&name=${name}",
+                url: `/api/province?page=${page_num}&pageSize=10&name=${name}`,
                 success: function (result) {
                     Delete()//清空
                     Print_search(result);//打印
