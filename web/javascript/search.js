@@ -84,12 +84,4 @@ window.onload = function () {
             alert("没有下一页了")
         }
     }
-
-    //监听回车按键，按下后搜索
-    $(".input").keydown(function (event) {
-        if (event.keyCode == 13) {
-            searchProvice();
-        }
-    });
-
 }
