@@ -5,6 +5,7 @@ window.onload = function () {
     var page_num = 1;
     var total;
 
+    document.title = name + "历史疫情数据";
     $("#province_name").append(name+"历史疫情数据");
 
     //清空表格
