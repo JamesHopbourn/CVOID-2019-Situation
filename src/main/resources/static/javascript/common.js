@@ -8,3 +8,10 @@ document.getElementById("app-header").innerHTML = `
         </ul>
     </div>
 `;
+
+document.getElementById("app-footer").innerHTML = `
+    <div class="footer">
+        Copyright © 2022 孤电子队 版权所有<br>
+        胡金栋、林钰婷、陈志烨、陈旭、何妙宏
+    </div>
+`;
