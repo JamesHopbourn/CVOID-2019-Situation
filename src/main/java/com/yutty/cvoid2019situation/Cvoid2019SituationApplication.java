@@ -12,9 +12,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @SpringBootApplication
 @ServletComponentScan
 @EnableTransactionManagement              
-@EnableCaching //开启SpringCache注解方式的缓存
+@EnableCaching
 public class Cvoid2019SituationApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(Cvoid2019SituationApplication.class, args);
         log.info("项目启动成功...");

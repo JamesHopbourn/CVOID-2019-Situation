@@ -5,7 +5,4 @@ import com.yutty.cvoid2019situation.entity.Detailcount;
 
 public interface DetailCountService extends IService<Detailcount> {
 
-//    IPage<Detailcount> getPage(int currentPage, int pageSize, Detailcount detailcount);
-
-
 }
