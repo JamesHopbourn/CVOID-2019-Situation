@@ -151,7 +151,7 @@ body {
 }
 
 .head {
-  background-image: url(/web/image/background.png);
+  background-image: url(../image/background.png);
   background-size: 830px 210px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
