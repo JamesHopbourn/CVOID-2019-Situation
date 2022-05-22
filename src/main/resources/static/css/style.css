@@ -1,8 +1,8 @@
 /* 头部 */
 ul {
   list-style-type: none;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
   background-color: #333;
 }
@@ -133,8 +133,8 @@ body {
 
 .btn_2 {
   background: #10aeb5;
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
   border-radius: 15px;
   font-family: Arial;
   color: white;
@@ -218,8 +218,8 @@ th {
   text-align: center;
   margin-left: 710px;
   background: #38e0cc;
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
   border-radius: 15px;
   font-family: Arial;
   color: white;
@@ -235,10 +235,10 @@ th {
 /* 上一页 */
 #btn_down {
   background: #38e0cc;
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
   border-radius: 30px;
-  font-family: Arial;
+   font-family: Arial;
   color: white;
   font-size: 10px;
   padding: 8px 8px 8px 8px;
