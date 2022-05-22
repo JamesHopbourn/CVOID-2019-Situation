@@ -1,13 +1,13 @@
 window.onload = function () {
-    var btn_today = document.getElementById("btn_today");
-    var btn_count = document.getElementById("btn_count");
-    var btn_dead = document.getElementById("btn_dead");
-    var btn_cured = document.getElementById("btn_cured");
-    var table_body = document.getElementById("tbody_2");
-    var count_today = "ASC";//近期确诊，默认降序
-    var count_count = "DESC";//确诊总数
-    var count_dead = "DESC";//死亡总数
-    var count_cured = "DESC";//治愈总数
+    let count_today = "ASC";//近期确诊，默认降序
+    let count_count = "DESC";//确诊总数
+    let count_dead = "DESC";//死亡总数
+    let count_cured = "DESC";//治愈总数
+    const btn_today = document.getElementById("btn_today");
+    const btn_count = document.getElementById("btn_count");
+    const btn_dead = document.getElementById("btn_dead");
+    const btn_cured = document.getElementById("btn_cured");
+    const table_body = document.getElementById("tbody_2");
 
     //清空表格
     function Delete() {
@@ -62,9 +62,8 @@ window.onload = function () {
         url: "/api/today",
         success: (result) => {
             Print_DESC(result)//降序打印表格
-            var list = result['data'];
-            var len = list.length;
-            var html = [];
+            const list = result['data'];
+            const len = list.length;
             var html_max = [];
             var html_min = [];
 
