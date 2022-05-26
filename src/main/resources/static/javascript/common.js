@@ -40,6 +40,11 @@ function Print_search(result) {
     $("#tbody_search").append(html.join(""));
 }
 
+// 按照指定顺序打印表格
+function Print_Order(result, order) {
+    if (order === "ASC") Print_ASC(result);
+    if (order === "DESC") Print_DESC(result);
+}
 
 //降序打印表格
 function Print_DESC(result) {
