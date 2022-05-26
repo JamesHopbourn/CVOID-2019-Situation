@@ -18,156 +18,119 @@ window.onload = function () {
         }
     }
 
-    //展示全国数据
-    $.ajax({
-        method: "GET",
-        url: "/api/province?page=1&pageSize=10&name=全国",
-        success: (result) => {
-            var list = result['data']['records'][0];
-            var html = [];
-            html.push("<td class='columnColor'>" + "全国" + "</td>");
-            html.push("<td>" + list["currentConfirmedCount"] + "</td>");
-            html.push("<td>" + list["confirmedCount"] + "</td>");
-            html.push("<td>" + list["deadCount"] + "</td>");
-            html.push("<td>" + list["curedCount"] + "</td>");
-            $("#tbody_nation").append(html.join(""));
-        },
-        error: () => {
-            alert("似乎出了些问题，请稍后再试")
+    // 全局错误处理
+    $(document).ajaxError(function (event, request, settings) {
+        // 定义不同类型的错误
+        mapper = {
+            "404": "文件没有找到",
+            "500": "服务器错误"
         }
+        alert(`请求地址：${settings.url}\n` +
+            `错误信息：${mapper[request.status]}`);
+    });
+
+    //载入页面后显示表格
+    $.getJSON('/api/today', (result) => {
+        Print_DESC(result)//降序打印表格
+        const list = result['data'];
+        const len = list.length;
+        var html_max = [];
+        var html_min = [];
+
+        //确诊最多
+        html_max.push("<td class='columnColor'>" + "确诊最多" + "</td>");
+        html_max.push("<td>" + list[0]["currentConfirmedCount"] + "</td>");
+        html_max.push("<td>" + list[0]["confirmedCount"] + "</td>");
+        html_max.push("<td>" + list[0]["deadCount"] + "</td>");
+        html_max.push("<td>" + list[0]["curedCount"] + "</td>");
+        $("#tbody_max").append(html_max.join(""));
+
+        //确诊最少
+        html_min.push("<td class='columnColor'>" + "确诊最少" + "</td>");
+        html_min.push("<td>" + list[len - 1]["currentConfirmedCount"] + "</td>");
+        html_min.push("<td>" + list[len - 1]["confirmedCount"] + "</td>");
+        html_min.push("<td>" + list[len - 1]["deadCount"] + "</td>");
+        html_min.push("<td>" + list[len - 1]["curedCount"] + "</td>");
+        $("#tbody_min").append(html_min.join(""));
+    })
+
+
+    //展示全国数据
+    $.getJSON('/api/province?page=1&pageSize=10&name=全国', (result) => {
+        var list = result['data']['records'][0];
+        var html = [];
+        html.push("<td class='columnColor'>" + "全国" + "</td>");
+        html.push("<td>" + list["currentConfirmedCount"] + "</td>");
+        html.push("<td>" + list["confirmedCount"] + "</td>");
+        html.push("<td>" + list["deadCount"] + "</td>");
+        html.push("<td>" + list["curedCount"] + "</td>");
+        $("#tbody_nation").append(html.join(""));
     })
 
     //展示福建省数据
-    $.ajax({
-        method: "GET",
-        url: "/api/province?page=1&pageSize=10&name=福建省",
-        success: (result) => {
-            var list = result['data']['records'][0];
-            var html = [];
-            html.push("<td class='columnColor'>" + "福建省" + "</td>");
-            html.push("<td>" + list["currentConfirmedCount"] + "</td>");
-            html.push("<td>" + list["confirmedCount"] + "</td>");
-            html.push("<td>" + list["deadCount"] + "</td>");
-            html.push("<td>" + list["curedCount"] + "</td>");
-            $("#tbody_fujian").append(html.join(""));
-        },
-        error: () => {
-            alert("似乎出了些问题，请稍后再试")
-        }
-    })
-
-    //载入页面后显示表格
-    $.ajax({
-        method: "GET",
-        url: "/api/today",
-        success: (result) => {
-            Print_DESC(result)//降序打印表格
-            const list = result['data'];
-            const len = list.length;
-            var html_max = [];
-            var html_min = [];
-
-            //确诊最多
-            html_max.push("<td class='columnColor'>" + "确诊最多" + "</td>");
-            html_max.push("<td>" + list[0]["currentConfirmedCount"] + "</td>");
-            html_max.push("<td>" + list[0]["confirmedCount"] + "</td>");
-            html_max.push("<td>" + list[0]["deadCount"] + "</td>");
-            html_max.push("<td>" + list[0]["curedCount"] + "</td>");
-            $("#tbody_max").append(html_max.join(""));
-
-            //确诊最少
-            html_min.push("<td class='columnColor'>" + "确诊最少" + "</td>");
-            html_min.push("<td>" + list[len - 1]["currentConfirmedCount"] + "</td>");
-            html_min.push("<td>" + list[len - 1]["confirmedCount"] + "</td>");
-            html_min.push("<td>" + list[len - 1]["deadCount"] + "</td>");
-            html_min.push("<td>" + list[len - 1]["curedCount"] + "</td>");
-            $("#tbody_min").append(html_min.join(""));
-        },
-        error: () => {
-            alert("似乎出了些问题，请稍后再试")
-        }
+    $.getJSON('/api/province?page=1&pageSize=10&name=福建省', (result) => {
+        var list = result['data']['records'][0];
+        var html = [];
+        html.push("<td class='columnColor'>" + "福建省" + "</td>");
+        html.push("<td>" + list["currentConfirmedCount"] + "</td>");
+        html.push("<td>" + list["confirmedCount"] + "</td>");
+        html.push("<td>" + list["deadCount"] + "</td>");
+        html.push("<td>" + list["curedCount"] + "</td>");
+        $("#tbody_fujian").append(html.join(""));
     })
 
     //根据近期确诊总数降序排序
     btn_today.onclick = () => {
-        $.ajax({
-            method: "GET",
-            url: "/api/today",
-            success: (result) => {
-                Delete();//清空表格
-                if (count_today == "DESC") {//首次点击降序输出
-                    Print_DESC(result)//降序打印表格
-                    count_today = "ASC";
-                } else {//再次点击升序输出
-                    Print_ASC(result)//升序打印表格
-                    count_today = "DESC";
-                }
-            },
-            error: () => {
-                alert("似乎出了些问题，请稍后再试")
+        $.getJSON('/api/today', (result) => {
+            Delete();//清空表格
+            if (count_today == "DESC") {//首次点击降序输出
+                Print_DESC(result)//降序打印表格
+                count_today = "ASC";
+            } else {//再次点击升序输出
+                Print_ASC(result)//升序打印表格
+                count_today = "DESC";
             }
         })
     }
 
     //根据确诊总数降序排序
     btn_count.onclick = () => {
-        $.ajax({
-            method: "GET",
-            url: "/api/count",
-            success: (result) => {
-                Delete();//清空表格
-                if (count_count == "DESC") {//首次点击降序输出
-                    Print_DESC(result)//降序打印表格
-                    count_count = "ASC";
-                } else {//再次点击升序输出
-                    Print_ASC(result)//升序打印表格
-                    count_count = "DESC";
-                }
-            },
-            error: () => {
-                alert("似乎出了些问题，请稍后再试")
+        $.getJSON('/api/count', (result) => {
+            Delete();//清空表格
+            if (count_count == "DESC") {//首次点击降序输出
+                Print_DESC(result)//降序打印表格
+                count_count = "ASC";
+            } else {//再次点击升序输出
+                Print_ASC(result)//升序打印表格
+                count_count = "DESC";
             }
         })
     }
 
     //根据死亡总数降序排序
     btn_dead.onclick = () => {
-        $.ajax({
-            method: "GET",
-            url: "/api/dead",
-            success: (result) => {
-                Delete();//清空表格
-                if (count_dead == "DESC") {//首次点击降序输出
-                    Print_DESC(result)//降序打印表格
-                    count_dead = "ASC";
-                } else {//再次点击升序输出
-                    Print_ASC(result)//升序打印表格
-                    count_dead = "DESC";
-                }
-            },
-            error: () => {
-                alert("似乎出了些问题，请稍后再试")
+        $.getJSON('/api/dead', (result) => {
+            Delete();//清空表格
+            if (count_dead == "DESC") {//首次点击降序输出
+                Print_DESC(result)//降序打印表格
+                count_dead = "ASC";
+            } else {//再次点击升序输出
+                Print_ASC(result)//升序打印表格
+                count_dead = "DESC";
             }
         })
     }
 
     //根据近期确诊总数降序排序
     btn_cured.onclick = () => {
-        $.ajax({
-            method: "GET",
-            url: "/api/cured",
-            success: (result) => {
-                Delete();//清空表格
-                if (count_cured == "DESC") {//首次点击降序输出
-                    Print_DESC(result)//降序打印表格
-                    count_cured = "ASC";
-                } else {//再次点击升序输出
-                    Print_ASC(result)//升序打印表格
-                    count_cured = "DESC";
-                }
-            },
-            error: () => {
-                alert("似乎出了些问题，请稍后再试")
+        $.getJSON('/api/cured', (result) => {
+            Delete();//清空表格
+            if (count_cured == "DESC") {//首次点击降序输出
+                Print_DESC(result)//降序打印表格
+                count_cured = "ASC";
+            } else {//再次点击升序输出
+                Print_ASC(result)//升序打印表格
+                count_cured = "DESC";
             }
         })
     }

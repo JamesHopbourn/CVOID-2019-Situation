@@ -6,7 +6,18 @@ window.onload = function () {
     var name = new URLSearchParams(window.location.search).get('name');
 
     document.title = name + "历史疫情数据";
-    $("#province_name").append(name+"历史疫情数据");
+    $("#province_name").append(name + "历史疫情数据");
+
+    // 全局错误处理
+    $(document).ajaxError(function (event, request, settings) {
+        // 定义不同类型的错误
+        mapper = {
+            "404": "文件没有找到",
+            "500": "服务器错误"
+        }
+        alert(`请求地址：${settings.url}\n` +
+            `错误信息：${mapper[request.status]}`);
+    });
 
     //加载完成后显示表格
     $.ajax({
@@ -26,16 +37,9 @@ window.onload = function () {
     btn_up.onclick = () => {
         if (page_num > 1) {
             page_num--;
-            $.ajax({
-                method: "GET",
-                url: `/api/province?page=${page_num}&pageSize=10&name=${name}`,
-                success: (result) => {
-                    Delete()//清空
-                    Print_search(result);//打印
-                },
-                error: () => {
-                    alert("似乎出了些问题，请稍后再试")
-                }
+            $.getJSON(`/api/province?page=${page_num}&pageSize=10&name=${name}`, (result) => {
+                Delete()//清空
+                Print_search(result);//打印
             })
         } else {
             alert("没有上一页了")
@@ -46,16 +50,9 @@ window.onload = function () {
     btn_down.onclick = () => {
         if (page_num < total) {
             page_num++;
-            $.ajax({
-                method: "GET",
-                url: `/api/province?page=${page_num}&pageSize=10&name=${name}`,
-                success: (result) => {
-                    Delete()//清空
-                    Print_search(result);//打印
-                },
-                error: () => {
-                    alert("似乎出了些问题，请稍后再试")
-                }
+            $.getJSON(`/api/province?page=${page_num}&pageSize=10&name=${name}`, (result) => {
+                Delete()//清空
+                Print_search(result);//打印
             })
         } else {
             alert("没有下一页了")
